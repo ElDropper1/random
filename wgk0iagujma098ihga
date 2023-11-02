@@ -1,704 +1,3572 @@
+--// new fling godmodegui
+
+
+
+
+
+--// Anti Cheat Bypass
+
+assert(getrawmetatable)
+gmt = getrawmetatable(game)
+setreadonly(gmt, false)
+old = gmt.__namecall
+gmt.__namecall =
+    newcclosure(
+        function(self, ...)
+        local args = {...}
+        if tostring(args[1]) == "BreathingHAMON" then
+            return
+        elseif tostring(args[1]) == "TeleportDetect" then
+            return
+        elseif tostring(args[1]) == "CHECKER_1" then
+            return
+        elseif tostring(args[1]) == "CHECKER" then
+            return
+        elseif tostring(args[1]) == "GUI_CHECK" then
+            return
+        elseif tostring(args[1]) == "OneMoreTime" then
+            return
+        elseif tostring(args[1]) == "checkingSPEED" then
+            return
+        elseif tostring(args[1]) == "BANREMOTE" then
+            return
+        elseif tostring(args[1]) == "PERMAIDBAN" then
+            return
+        elseif tostring(args[1]) == "KICKREMOTE" then
+            return
+        elseif tostring(args[1]) == "BR_KICKPC" then
+            return
+        end
+        return old(self, ...)
+        end)
+
+game:GetService('StarterGui'):SetCore("SendNotification", {
+	Title = '';
+	Text = 'Anti cheat bypass executed';
+	Icon = "";
+	Duration = 30;
+});
+
+--// Hide/Unhide
+
+game.Players.LocalPlayer.Chatted:Connect(function(Message)
+    if Message == '/e hide' then task.wait()
+        game:GetService("CoreGui")["Godmode Gui"].ContainerFrame.Visible = false
+
+elseif Message == '/e unhide' then task.wait()
+    game:GetService("CoreGui")["Godmode Gui"].ContainerFrame.Visible = true
+ end
+end)
+
+
+--// Stuff
+
+if not game['Loaded'] or not game:GetService('Players')['LocalPlayer'] then
+    game['Loaded']:Wait();
+    game:WaitForChild(game:GetService('Players'));
+    game:GetService('Players'):WaitForChild(game:GetService('Players').LocalPlayer.Name)
+end
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,100,0)
+
+game:GetService("Players").PlayerAdded:Connect(function(Player)
+            if Player:WaitForChild("Backpack"):FindFirstChild("AdminBan") then
+                LocalPlayer:Kick("Admin has joined the server.")
+            end
+        end)
+        for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+            if v and v:WaitForChild("Backpack"):FindFirstChild("AdminBan") then
+                game.Players.LocalPlayer:Kick("Admin was in the server.")
+            end
+        end
+
+
+game:GetService("Workspace").FallenPartsDestroyHeight = math.huge-math.huge
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "/e laugh" then
+    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+           game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+   game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",7649721525)
+   game.Players:Chat("/e cm")
+elseif msg == "/e haha" then
+    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+           game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+   game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",8418482985)
+   game.Players:Chat("/e cm")
+
+elseif msg == "/e wave" then
+        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+               game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+       game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",154147007)
+       game.Players:Chat("/e cm")
+    elseif msg == "i´m batman" then
+        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+               game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+       game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",130773257)
+       game.Players:Chat("/e cm")
+       elseif msg == "im batman" then
+        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+               game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+       game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",130773257)
+       game.Players:Chat("/e cm")
+    elseif msg == "/e fall" then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-264.0344, 230, -358.0697, 0.035, 0, 0.9994, 0, 1, 0, -0.9994, 0, 0.035)
+local FallAnim = Instance.new("Animation")
+FallAnim.AnimationId = "rbxassetid://13850654420"
+FallAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(FallAnim)
+FallAnim:Play()
+game:GetService('RunService'):BindToRenderStep("Land", 0 , function()
+if game.Players.LocalPlayer.Character.Humanoid:GetState() == Enum.HumanoidStateType.Landed then
+FallAnim:Stop()
+local LandAnim = Instance.new("Animation")
+LandAnim.AnimationId = "rbxassetid://13850663836"
+LandAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(LandAnim)
+LandAnim:Play()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",13850747895)
+game.Players:Chat("/e cm")
+         game:GetService('RunService'):UnbindFromRenderStep("Land")
+      end
+end)
+end
+   end)
+   
+   game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    local args = msg:split(" ")
+   if args[1] == ";dropcash" then
+   local amount = (args[2])
+   game:GetService("ReplicatedStorage").MainEvent:FireServer("DropMoney",amount)
+       end
+   end)
+
+
+
+local function GetClosestToCursor()
+    local Target
+    local MinDistance = math.huge
+    for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+        if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 then
+        if v.Character:FindFirstChild("Head") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("UpperTorso") and v.Character:FindFirstChild("LowerTorso") then
+            local TargetPosition,OnScreen = game:GetService("Workspace").CurrentCamera:WorldToViewportPoint(v.Character.PrimaryPart.Position)
+            local Mag = (Vector2.new(TargetPosition.X, TargetPosition.Y) - Vector2.new(game:GetService("Players").LocalPlayer:GetMouse().X, game:GetService("Players").LocalPlayer:GetMouse().Y)).magnitude
+            if Mag < MinDistance and OnScreen then
+                Target = v
+                MinDistance = Mag
+            end
+        end
+    end
+    end
+    return Target
+end
+
+
+
+game:GetService('RunService'):BindToRenderStep("fruwu", 0 , function()
+    game.Players.LocalPlayer.Character.Humanoid.Health = math.huge
+    end)
+
+
+
+
+
+   getgenv().PushPower = 400
+   getgenv().FlightPush = 370
+   
+   getgenv().Push = false
+   game:GetService("RunService").heartbeat:Connect(function()
+   if getgenv().Push == true then 
+   local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+   game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.X*getgenv().PushPower,getgenv().FlightPush,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.Z*getgenv().PushPower)
+   game:GetService("RunService").RenderStepped:Wait()
+   game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
+   end 
+   end)
+
+
+   getgenv().kickpower = 600
+   getgenv().kick2power = 500
+   
+   getgenv().Kicks = false
+   game:GetService("RunService").heartbeat:Connect(function()
+   if getgenv().Kicks == true then 
+   local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+   game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.X*getgenv().PushPower,getgenv().FlightPush,game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector.Z*getgenv().PushPower)
+   game:GetService("RunService").RenderStepped:Wait()
+   game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
+   end 
+   end)
+
+
+getgenv().noclip = false -- toggle to true to enable
+ 
+ local Loop  game:GetService('RunService').Stepped:connect(function()
+            if getgenv().noclip then
+                for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+                    if v:IsA("BasePart") then
+                        if v.CanCollide ~= not getgenv().noclip then
+                            v.CanCollide = not getgenv().noclip
+                        end
+                    end
+                end
+            end
+        end)
+
+---------------------------------------------Script Begins Here------------------------------------------------
+
+
+
+local UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/twink"))()
+local Library = UI.Load("Godmode Gui")
+
+local MainPage = Library.AddPage("MainScripts")
+local ToolsPage = Library.AddPage("Tools")
+local MusicPage = Library.AddPage("Music Ids")
+local EmojiPage = Library.AddPage("Emoji Page")
+local HalloweenPage = Library.AddPage("Halloween")
+local TestPage = Library.AddPage("Experimental")
+local Powers = Library.AddPage("Super Powers")
+-- local BuyPage = Library.AddPage("AutoBuy")
+
+getgenv().gaylude = false
+MainPage.AddToggle("Bullet Deflection", nil, function(Value)
 local Player = game.Players.LocalPlayer
-local Mouse = Player:GetMouse()
+getgenv().gaylude = Value
+local gaylude
 
-local TweenService = game:GetService("TweenService")
-local UserInputService = game:GetService("UserInputService")
-local CoreGuiService = game:GetService("CoreGui")
-local RunService = game:GetService("RunService")
-local TextService = game:GetService("TextService")
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",2303101209)
 
-local TweenTime = 0.1
-local Level = 1
+if getgenv().gaylude then
+    gaylude = game.Workspace.Ignored.DescendantAdded:Connect(function(Ray)
+        if Ray:IsA('Attachment') then
+            local mag = (Player.Character.PrimaryPart.Position - Ray.WorldPosition).Magnitude
+            if mag <= 3 then
+                local Math = math.random(1, 4)
+                if Math == 1 then
+                 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",2303101209)
+                    game.Players:Chat("/e cm")
+                elseif Math == 2 then
+                 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",2303101209)
+                    game.Players:Chat("/e cm")
+                elseif Math == 3 then
+                 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",2303101209)
 
-local GlobalTweenInfo = TweenInfo.new(TweenTime)
-local AlteredTweenInfo = TweenInfo.new(TweenTime, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
-
-local DropShadowID = "rbxassetid://297774371"
-local DropShadowTransparency = 0.3
-
-local IconLibraryID = "rbxassetid://3926305904"
-local IconLibraryID2 = "rbxassetid://3926307971"
-
-local MainFont = Enum.Font.Gotham
-
-local function GetXY(GuiObject)
-	local X, Y = Mouse.X - GuiObject.AbsolutePosition.X, Mouse.Y - GuiObject.AbsolutePosition.Y
-	local MaxX, MaxY = GuiObject.AbsoluteSize.X, GuiObject.AbsoluteSize.Y
-	X, Y = math.clamp(X, 0, MaxX), math.clamp(Y, 0, MaxY)
-	return X, Y, X/MaxX, Y/MaxY
+                    game.Players:Chat("/e cm")
+                elseif Math == 4 then
+                 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",2303101209)
+                    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+                    game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):UnequipTools()
+                    game.Players:Chat("/e cm")
+                end
+            end
+        end
+        if getgenv().gaylude == false and gaylude then
+            gaylude:Disconnect()
+        end
+    end)
 end
+end)
 
-local function TitleIcon(ButtonOrNot)
-	local NewTitleIcon = Instance.new(ButtonOrNot and "ImageButton" or "ImageLabel")
-	NewTitleIcon.Name = "TitleIcon"
-	NewTitleIcon.BackgroundTransparency = 1
-	NewTitleIcon.Image = IconLibraryID
-	NewTitleIcon.ImageRectOffset = Vector2.new(524, 764)
-	NewTitleIcon.ImageRectSize = Vector2.new(36, 36)
-	NewTitleIcon.Size = UDim2.new(0,14,0,14)
-	NewTitleIcon.Position = UDim2.new(1,-17,0,3)
-	NewTitleIcon.Rotation = 180
-	NewTitleIcon.ZIndex = Level
-	return NewTitleIcon
+
+getgenv().prolude = false
+MainPage.AddToggle("Bullet Deflection (anims)", nil, function(Value)
+local Player = game.Players.LocalPlayer
+getgenv().prolude = Value
+local prolude
+
+
+local Swing1 = Instance.new('Animation', game.ReplicatedStorage)
+Swing1.AnimationId = 'rbxassetid://8254794168'
+
+local Swing2 = Instance.new('Animation', game.ReplicatedStorage)
+Swing2.AnimationId = 'rbxassetid://8254792138'
+
+local Swing3 = Instance.new('Animation', game.ReplicatedStorage)
+Swing3.AnimationId = 'rbxassetid://8254789608'
+
+local Swing4 = Instance.new('Animation', game.ReplicatedStorage)
+Swing4.AnimationId = 'rbxassetid://8254787838'
+
+local _1 = Player.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing1)
+local _2 = Player.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing2)
+local _3 = Player.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing3)
+local _4 = Player.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing4)
+
+if getgenv().prolude then
+    prolude = game.Workspace.Ignored.DescendantAdded:Connect(function(Ray)
+        if Ray:IsA('Attachment') then
+            local mag = (Player.Character.PrimaryPart.Position - Ray.WorldPosition).Magnitude
+            if mag <= 3 then
+                local Math = math.random(1, 4)
+                if Math == 1 then
+                 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",2303101209)
+                      _2:Stop()
+                    _3:Stop()
+                    _1:Play()
+                    _4:Stop()
+                    _1:AdjustSpeed(2.4)
+                    game.Players:Chat("/e cm")
+                elseif Math == 2 then
+                 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",2303101209)
+                       _1:Stop()
+                    _3:Stop()
+                    _2:Play()
+                    _4:Stop()
+                    _2:AdjustSpeed(2.4)
+                    game.Players:Chat("/e cm")
+                elseif Math == 3 then
+                 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",2303101209)
+                      _1:Stop()
+                    _2:Stop()
+                    _3:Play()
+                    _4:Stop()
+                    _3:AdjustSpeed(2.4)
+                    game.Players:Chat("/e cm")
+                elseif Math == 4 then
+                 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",2303101209)
+                      _1:Stop()
+                    _2:Stop()
+                    _3:Stop()
+                    _4:Play()
+                    _4:AdjustSpeed(2.4)
+                    game.Players:Chat("/e cm")
+                end
+            end
+        end
+        if getgenv().prolude == false and prolude then
+            prolude:Disconnect()
+        end
+    end)
 end
+end)
 
-local function TickIcon(ButtonOrNot)
-	local NewTickIcon = Instance.new(ButtonOrNot and "ImageButton" or "ImageLabel")
-	NewTickIcon.Name = "TickIcon"
-	NewTickIcon.BackgroundTransparency = 1
-	NewTickIcon.Image = "rbxassetid://3926305904"
-	NewTickIcon.ImageRectOffset = Vector2.new(312,4)
-	NewTickIcon.ImageRectSize = Vector2.new(24,24)
-	NewTickIcon.Size = UDim2.new(1,-6,1,-6)
-	NewTickIcon.Position = UDim2.new(0,3,0,3)
-	NewTickIcon.ZIndex = Level
-	return NewTickIcon
+getgenv().spidersenses = false
+MainPage.AddToggle("Spider Sense", nil, function(Value)
+local Player = game.Players.LocalPlayer
+getgenv().spidersenses = Value
+local spidersenses
+
+
+local Sense1 = Instance.new('Animation', game.ReplicatedStorage)
+Sense1.AnimationId = 'rbxassetid://2788315673'
+
+local Sense2 = Instance.new('Animation', game.ReplicatedStorage)
+Sense2.AnimationId = 'rbxassetid://2788313790'
+
+local Sense3 = Instance.new('Animation', game.ReplicatedStorage)
+Sense3.AnimationId = 'rbxassetid://2788316350'
+
+local Sense4 = Instance.new('Animation', game.ReplicatedStorage)
+Sense4.AnimationId = 'rbxassetid://2788314837'
+
+local _1 = Player.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Sense1)
+local _2 = Player.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Sense2)
+local _3 = Player.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Sense3)
+local _4 = Player.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Sense4)
+
+if getgenv().spidersenses then
+    spidersenses = game.Workspace.Ignored.DescendantAdded:Connect(function(Ray)
+        if Ray:IsA('Attachment') then
+            local mag = (Player.Character.PrimaryPart.Position - Ray.WorldPosition).Magnitude
+            if mag <= 3 then
+                local Math = math.random(1, 4)
+                if Math == 1 then
+                 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",3950015905)
+                      _2:Stop()
+                    _3:Stop()
+                    _1:Play()
+                    _4:Stop()
+                    game.Players:Chat("/e cm")
+                elseif Math == 2 then
+                 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",3950015905)
+                       _1:Stop()
+                    _3:Stop()
+                    _2:Play()
+                    _4:Stop()
+                    game.Players:Chat("/e cm")
+                elseif Math == 3 then
+                 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",3950015905)
+                      _1:Stop()
+                    _2:Stop()
+                    _3:Play()
+                    _4:Stop()
+                    game.Players:Chat("/e cm")
+                elseif Math == 4 then
+                 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",3950015905)
+                      _1:Stop()
+                    _2:Stop()
+                    _3:Stop()
+                    _4:Play()
+                    game.Players:Chat("/e cm")
+                end
+            end
+        end
+        if getgenv().spidersenses == false and spidersenses then
+            spidersenses:Disconnect()
+        end
+    end)
 end
+end)
 
-local function DropdownIcon(ButtonOrNot)
-	local NewDropdownIcon = Instance.new(ButtonOrNot and "ImageButton" or "ImageLabel")
-	NewDropdownIcon.Name = "DropdownIcon"
-	NewDropdownIcon.BackgroundTransparency = 1
-	NewDropdownIcon.Image = IconLibraryID2
-	NewDropdownIcon.ImageRectOffset = Vector2.new(324,364)
-	NewDropdownIcon.ImageRectSize = Vector2.new(36,36)
-	NewDropdownIcon.Size = UDim2.new(0,16,0,16)
-	NewDropdownIcon.Position = UDim2.new(1,-18,0,2)
-	NewDropdownIcon.ZIndex = Level
-	return NewDropdownIcon
+MainPage.AddToggle("Spider Sense (meele)", nil, function(Value)
+    getgenv().spidersense = Value
+
+    local tools = {
+        "Combat",
+        "[Nunchucks]",
+        "[Knife]",
+        "[Bat]",
+        "[StopSign]",
+        "[SledgeHammer]",
+        "[Pencil]",
+        "[Katana]"
+    }
+    
+    local function findTool(toolName)
+        for i, v in ipairs(tools) do
+            if v == toolName then
+                return true
+            end
+        end
+        return false
+    end
+    
+    local function isWithinDistance(player, distance)
+        if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            local localPosition = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position
+            local playerPosition = player.Character.HumanoidRootPart.Position
+            local distanceBetween = (localPosition - playerPosition).Magnitude
+            return distanceBetween <= distance
+        end
+        return false
+    end
+    
+    local autism = false
+    spawn(function()
+        while getgenv().spidersense do 
+            task.wait()
+            pcall(function()
+                for i, player in ipairs(game:GetService("Players"):GetChildren()) do 
+                    if player ~= game:GetService("Players").LocalPlayer and isWithinDistance(player, 5) then
+                        local character = player.Character
+                        if character and character:FindFirstChild("Humanoid") then
+                            local tool = character:FindFirstChildOfClass("Tool")
+                            if tool and findTool(tool.Name) and player.Character.BodyEffects.Attacking.Value == true  then 
+                                local AnimationTracks = game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()
+                                for i, Track in pairs(AnimationTracks) do
+                                  if Track.Animation.AnimationId == "rbxassetid://2788315673" or Track.Animation.AnimationId == "rbxassetid://2788316350" or Track.Animation.AnimationId == "rbxassetid://2788313790"  then
+                                  autism = true 
+                                  elseif Track.Animation.AnimationId ~= "rbxassetid://2788315673" or Track.Animation.AnimationId ~= "rbxassetid://2788316350" or Track.Animation.AnimationId ~= "rbxassetid://2788313790" then 
+                                    if autism == false then 
+                                    autism = true
+                                    local a = math.random(1,4)
+                                    if a == 1 then 
+                                        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+                                        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+                                game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",3950015905)
+                                game.Players:Chat("/e cm")
+                                    local Anim = Instance.new("Animation")
+                                    Anim.AnimationId = "http://www.roblox.com/asset/?id=2788315673"
+                                    CurrAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(Anim)
+                                    CurrAnim:Play()
+                                    CurrAnim.Stopped:Wait()
+                                    autism = false 
+                                    end 
+                                    if a == 2 then 
+                                        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+                                        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+                                game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",3950015905)
+                                game.Players:Chat("/e cm")
+                                        local Anim = Instance.new("Animation")
+                                        Anim.AnimationId = "http://www.roblox.com/asset/?id=2788316350"
+                                        CurrAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(Anim)
+                                        CurrAnim:Play()
+                                        CurrAnim.Stopped:Wait()
+                                        autism = false 
+                                    end
+                                    if a == 3 then 
+                                        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+                                        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+                                game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",3950015905)
+                                game.Players:Chat("/e cm")
+                                        local Anim = Instance.new("Animation")
+                                        Anim.AnimationId = "http://www.roblox.com/asset/?id=2788313790"
+                                        CurrAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(Anim)
+                                        CurrAnim:Play()
+                                        CurrAnim.Stopped:Wait()
+                                        autism = false 
+                                    end
+                                    if a == 4 then 
+                                        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+                                        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+                                game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",3950015905)
+                                game.Players:Chat("/e cm")
+                                        local Anim = Instance.new("Animation")
+                                        Anim.AnimationId = "http://www.roblox.com/asset/?id=2788314837"
+                                        CurrAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(Anim)
+                                        CurrAnim:Play()
+                                        CurrAnim.Stopped:Wait()
+                                        autism = false 
+                                    end
+                                    end
+                                  end
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end)
+end)
+
+
+
+
+
+MainPage.AddToggle("Hit Sfx", nil, function(Value)
+    local hitsfxplayed = false
+
+    getgenv().hitsfx2 = Value
+    while getgenv().hitsfx2 do task.wait()
+    
+        for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do 
+            if v:IsA("Sound") and v.Name == "Punch1" or v.Name == "Punch2" or v.Name == "Punch3" or v.Name == "Punch4" then 
+            if not hitsfxplayed then
+    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+    game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",7102498124)
+    game.Players:Chat("/e cm")
+   hitsfxplayed = true
+    wait(1)
+    hitsfxplayed = false
+              end 
+           end
+        end 
+    end
+end)
+
+MainPage.AddToggle("Knife Hit Sfx", nil, function(Value)
+    local knifesfxplayed = false
+
+    getgenv().knifesfx = Value
+    while getgenv().knifesfx do task.wait()
+    
+        for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do 
+            if v:IsA("Sound") and v.Name == "Stab"  then 
+            if not knifesfxplayed then
+    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+    game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",7350477734)
+    game.Players:Chat("/e cm")
+    knifesfxplayed = true
+    wait(1)
+    knifesfxplayed = false
+              end 
+           end
+        end 
+    end
+end)
+
+
+
+MainPage.AddButton("Tp To Bull", function()
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-665.001526, 24.3948212, -106.292496, -0.000192354855, 0.10302107, 0.994679272, 0.000973766844, 0.994678795, -0.103020892, -0.999999523, 0.000948773697, -0.000291650009)
+end)
+
+MainPage.AddButton("Mask", function()
+    local player = game.Players.LocalPlayer
+    local firstPos = player.Character.HumanoidRootPart.Position
+    
+    local function clickDetectorExists()
+        return game:GetService("Workspace").Ignored.Shop:FindFirstChild("[Surgeon Mask] - $26") and
+               game:GetService("Workspace").Ignored.Shop["[Surgeon Mask] - $26"]:FindFirstChild("ClickDetector")
+    end
+    
+    local function maskInBackpack()
+        return player.Backpack:FindFirstChild("[Mask]")
+    end
+    
+    local function maskEquipped()
+        return player.Character:FindFirstChild("In-gameMask")
+    end
+    
+    local function removeTools()
+        game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):UnequipTools()
+    end
+    
+    local function waitFor(condition)
+        repeat
+            wait()
+        until condition()
+    end
+    
+    waitFor(clickDetectorExists)
+    repeat
+    player.Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Workspace").Ignored.Shop["[Surgeon Mask] - $26"].Head.Position) + Vector3.new(0,-8,0)
+    fireclickdetector(game:GetService("Workspace").Ignored.Shop["[Surgeon Mask] - $26"].ClickDetector)
+    task.wait()
+    until  player.Backpack:FindFirstChild("[Mask]")
+
+    waitFor(maskInBackpack)
+    
+    player.Backpack:FindFirstChild("[Mask]").Parent = player.Character
+    player.Character:FindFirstChild("[Mask]"):Activate()
+    
+    waitFor(maskEquipped)
+    
+    waitFor(function()
+        removeTools()
+        return maskInBackpack()
+    end)
+    
+    task.wait(0.5)
+    
+    player.Character.HumanoidRootPart.CFrame = CFrame.new(firstPos)
+end)
+
+MainPage.AddButton("Remove Arm", function()
+    local target = "ElDropper22"
+game.Players[target].Character.RightLowerArm.Position = Vector3.new(0,-1000,0)
+end)
+
+MainPage.AddButton("Fall", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-264.0344, 230, -358.0697, 0.035, 0, 0.9994, 0, 1, 0, -0.9994, 0, 0.035)
+    local FallAnim = Instance.new("Animation")
+    FallAnim.AnimationId = "rbxassetid://13850654420"
+    FallAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(FallAnim)
+    FallAnim:Play()
+    game:GetService('RunService'):BindToRenderStep("Land", 0 , function()
+    if game.Players.LocalPlayer.Character.Humanoid:GetState() == Enum.HumanoidStateType.Landed then
+    FallAnim:Stop()
+    local LandAnim = Instance.new("Animation")
+    LandAnim.AnimationId = "rbxassetid://13850663836"
+    LandAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(LandAnim)
+    LandAnim:Play()
+     game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+    game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",13850747895)
+    game.Players:Chat("/e cm")
+             game:GetService('RunService'):UnbindFromRenderStep("Land")
+          end
+    end)
+end)
+
+ToolsPage.AddToggle("Shazam Fly", false, function(State)
+    getgenv().fly = State
+    while getgenv().fly == true do task.wait() 
+        pcall(function()
+        if not game.Players.LocalPlayer.Character:FindFirstChild("Fly") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Fly") then
+            
+       function sandbox(var,func)
+                local env = getfenv(func)
+                local newenv = setmetatable({},{
+                    __index = function(self,k)
+                        if k=="script" then
+                            return var
+                        else
+                            return env[k]
+                        end
+                    end,
+                })
+                setfenv(func,newenv)
+                return func
+            end
+            cors = {}
+            mas = Instance.new("Model",game:GetService("Lighting"))
+            Tool0 = Instance.new("Tool")
+            LocalScript1 = Instance.new("LocalScript")
+            Sound2 = Instance.new("Sound")
+            Sound3 = Instance.new("Sound")
+            Animation4 = Instance.new("Animation")
+            RemoteEvent5 = Instance.new("RemoteEvent")
+            Animation6 = Instance.new("Animation")
+            Tool0.Name = "Fly"
+            Tool0.Parent = mas
+            Tool0.CanBeDropped = false
+            Tool0.RequiresHandle = false
+            LocalScript1.Name = "local"
+            LocalScript1.Parent = Tool0
+            table.insert(cors,sandbox(LocalScript1,function()
+                wait();
+                local l__LocalPlayer__1 = game.Players.LocalPlayer;
+                while true do
+                    wait();
+                    if l__LocalPlayer__1.Character then
+                        break;
+                    end;
+                end;
+                local l__Character__2 = l__LocalPlayer__1.Character;
+                local l__Humanoid__3 = l__Character__2:WaitForChild("Humanoid");
+                local l__Parent__4 = script.Parent;
+                local u1 = false;
+                local u2 = l__Humanoid__3:LoadAnimation(script.Hover);
+                local u3 = nil;
+                local u4 = nil;
+                local u5 = false;
+                local u6 = false;
+                local u7 = l__Humanoid__3:LoadAnimation(script.Fly);
+                l__Parent__4.Equipped:connect(function(p1)
+                    Sound3:Play()
+                    p1.TargetFilter = workspace;
+                    u1 = true;
+                    u2:Play();
+                    u3 = Instance.new("BodyGyro");
+                    u3.Name = "NA";
+                    u3.Parent = l__Character__2.HumanoidRootPart;
+                    u3.MaxTorque = Vector3.new(30000, 0, 30000);
+                    u3.P = u3.P * 5;
+                    u3.CFrame = CFrame.new(0, 0, 0);
+                    u4 = Instance.new("BodyPosition");
+                    u4.Name = "NA";
+                    u4.Parent = l__Character__2.HumanoidRootPart;
+                    u4.MaxForce = Vector3.new(60000, 60000, 60000);
+                     u4.Position = l__Character__2.HumanoidRootPart.Position
+                    p1.Button1Down:connect(function()
+                        Sound2:Play()
+                        if u5 then
+                            return;
+                        end;
+                        u5 = true;
+                        u6 = true;
+                        u7:Play();
+                        local v5 = Instance.new("BodyVelocity", l__Character__2.HumanoidRootPart);
+                        v5.MaxForce = Vector3.new(50000, 50000, 50000);
+                        v5.Velocity = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, p1.Hit.p).lookVector * 85;
+                        u3.MaxTorque = Vector3.new(30000, 30000, 30000);
+                        u3.CFrame = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, p1.Hit.p);
+                        u4.Parent = nil;
+                        l__Humanoid__3.AutoRotate = false;
+                        if u2.IsPlaying then
+                            u2:Stop();
+                        end;
+                        while u6 do
+                            v5.Velocity = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, p1.Hit.p).lookVector * 85;
+                            u3.CFrame = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, p1.Hit.p);
+                            game:GetService("RunService").Heartbeat:wait();		
+                        end;
+                        l__Humanoid__3.AutoRotate = true;
+                        v5:Destroy();
+                        if u4 ~= nil then
+                            u4.Position = l__Character__2.HumanoidRootPart.Position;
+                            u4.Parent = l__Character__2.HumanoidRootPart;
+                        end;
+                        if u3 ~= nil then
+                            u3.MaxTorque = Vector3.new(30000, 0, 30000);
+                            u3.CFrame = CFrame.new(0, 0, 0);
+                        end;
+                        u6 = false;
+                        if u1 then
+                            u2:Play();
+                        end;
+                        u7:Stop();
+                        wait(0.3);
+                        u5 = false;
+                    end);
+                    p1.Button1Up:connect(function()
+                        Sound2:Stop()
+                        Sound3:Play()
+                        u6 = false;
+                    end);
+                end);
+                l__Parent__4.Unequipped:connect(function()
+                    Sound2:Stop()
+                    Sound3:Play()
+                    u1 = false;
+                    u6 = false;
+                    u3:Destroy();
+                    u3 = nil;
+                    u4:Destroy();
+                    u4 = nil;
+                    if u2.IsPlaying then
+                        u2:Stop();
+                    end;
+                end);
+            end))
+            Sound2.Name = "Flapping"
+            Sound2.Parent = LocalScript1
+            Sound2.Looped = true
+            Sound2.MaxDistance = 100
+            Sound2.Pitch = 1.5
+            Sound2.PlaybackSpeed = 1.5
+            Sound2.SoundId = "rbxassetid://1462718291"
+            Sound3.Name = "Activation"
+            Sound3.Parent = LocalScript1
+            Sound3.MaxDistance = 100
+            Sound3.SoundId = "rbxassetid://2952274135"
+            Sound3.Volume = 0.69999998807907
+            Animation4.Name = "Hover"
+            Animation4.Parent = LocalScript1
+            Animation4.AnimationId = "rbxassetid://3541114300"
+            RemoteEvent5.Name = "re"
+            RemoteEvent5.Parent = LocalScript1
+            Animation6.Name = "Fly"
+            Animation6.Parent = LocalScript1
+            Animation6.AnimationId = "rbxassetid://3541044388"
+            for i,v in pairs(mas:GetChildren()) do
+                v.Parent = game.Players.LocalPlayer.Backpack
+                pcall(function() v:MakeJoints() end)
+            end
+            mas:Destroy()
+            for i,v in pairs(cors) do
+                spawn(function()
+                    pcall(v)
+                end)
+            end
+      
+    
+        end
+      end)
+    end
+    if not getgenv().fly then 
+        if  game.Players.LocalPlayer.Character:FindFirstChild("Fly") then 
+            game.Players.LocalPlayer.Character:FindFirstChild("Fly"):Destroy()
+        else
+            game.Players.LocalPlayer.Backpack:FindFirstChild("Fly"):Destroy()
+           end
+        end
+    end)
+
+    ToolsPage.AddToggle("Ghost Fly", false, function(State)
+      getgenv().ghostfly = State
+        while getgenv().ghostfly == true do task.wait() 
+            pcall(function()
+            if not game.Players.LocalPlayer.Character:FindFirstChild("Ghost Fly") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Ghost Fly") then
+                
+                local function Fly()
+                    local function sandbox(var, func)
+                        local env = getfenv(func)
+                        local newenv = setmetatable({}, {
+                            __index = function(self, k)
+                                if k == "script" then
+                                    return var
+                                else
+                                    return env[k]
+                                end
+                            end,
+                        })
+                        setfenv(func, newenv)
+                        return func
+                    end
+            
+                    local coroutines = {}
+                    local model = Instance.new("Model", game:GetService("Lighting"))
+                    local tool = Instance.new("Tool")
+                    local localScript = Instance.new("LocalScript")
+                    local sound1 = Instance.new("Sound")
+                    local sound2 = Instance.new("Sound")
+                    local animation1 = Instance.new("Animation")
+                    local remoteEvent = Instance.new("RemoteEvent")
+                    local animation2 = Instance.new("Animation")
+            
+                    tool.Name = "Ghost Fly"
+                    tool.Parent = model
+                    tool.CanBeDropped = false
+                    tool.RequiresHandle = false
+                    localScript.Name = "local"
+                    localScript.Parent = tool
+            
+                    table.insert(coroutines, sandbox(localScript, function()
+                        wait()
+                        local localPlayer = game.Players.LocalPlayer
+                        while true do
+                            wait()
+                            if localPlayer.Character then
+                                break
+                            end
+                        end
+                        local character = localPlayer.Character
+                        local humanoid = character:WaitForChild("Humanoid")
+                        local parent = script.Parent
+                        local isButton1Down = false
+                        local hoverAnimation = humanoid:LoadAnimation(script.Hover)
+                        local bodyGyro = nil
+                        local bodyPosition = nil
+                        local isButton1Up = false
+                        local isFlying = false
+                        local flyAnimation = humanoid:LoadAnimation(script.Fly)
+            
+                        parent.Equipped:Connect(function(inputObject)
+                         
+                            game:GetService('RunService'):BindToRenderStep("Noclip", 0 , function()
+                            if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then 
+                                game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CanCollide = false
+                            end
+                            if game.Players.LocalPlayer.Character:FindFirstChild("UpperTorso") then 
+                                game.Players.LocalPlayer.Character:FindFirstChild("UpperTorso").CanCollide = false
+                            end
+                            if game.Players.LocalPlayer.Character:FindFirstChild("Head") then 
+                                game.Players.LocalPlayer.Character:FindFirstChild("Head").CanCollide = false
+                            end
+                            if game.Players.LocalPlayer.Character:FindFirstChild("LowerTorso") then 
+                                game.Players.LocalPlayer.Character:FindFirstChild("LowerTorso").CanCollide = false
+                            end
+                        end)
+
+                            sound2:Play()
+                            inputObject.TargetFilter = workspace
+                            isButton1Down = true
+                            hoverAnimation:Play()
+
+                            bodyGyro = Instance.new("BodyGyro")
+                            bodyGyro.Name = "NA"
+                            bodyGyro.Parent = character.HumanoidRootPart
+                            bodyGyro.MaxTorque = Vector3.new(30000, 0, 30000)
+                            bodyGyro.P = bodyGyro.P * 5
+                            bodyGyro.CFrame = CFrame.new(0, 0, 0)
+                            bodyPosition = Instance.new("BodyPosition")
+                            bodyPosition.Name = "NA"
+                            bodyPosition.Parent = character.HumanoidRootPart
+                            bodyPosition.MaxForce = Vector3.new(60000, 60000, 60000)
+                            bodyPosition.Position = character.HumanoidRootPart.Position + Vector3.new(0,8,0)
+            
+                            inputObject.Button1Down:Connect(function()
+                                sound1:Play()
+                                if isFlying then
+                                    return
+                                end
+                                isFlying = true
+                                isButton1Up = true
+                                flyAnimation:Play()
+                                hoverAnimation:Play()
+                                local bodyVelocity = Instance.new("BodyVelocity", character.HumanoidRootPart)
+                                bodyVelocity.MaxForce = Vector3.new(50000, 50000, 50000)
+                                bodyVelocity.Velocity = CFrame.new(character.HumanoidRootPart.CFrame.p, inputObject.Hit.p).lookVector * 25
+                                bodyGyro.MaxTorque = Vector3.new(30000, 30000, 30000)
+                                bodyGyro.CFrame = CFrame.new(character.HumanoidRootPart.CFrame.p, inputObject.Hit.p)
+                                bodyPosition.Parent = nil
+                                humanoid.AutoRotate = false
+             
+
+                                while isButton1Up do
+                                    bodyVelocity.Velocity = CFrame.new(character.HumanoidRootPart.CFrame.p, inputObject.Hit.p).lookVector * 25
+                                    bodyGyro.CFrame = CFrame.new(character.HumanoidRootPart.CFrame.p, inputObject.Hit.p)
+                                    game:GetService("RunService").Heartbeat:Wait()
+                                end
+                                humanoid.AutoRotate = true
+                                bodyVelocity:Destroy()
+                                if bodyPosition ~= nil then
+                                    bodyPosition.Position = character.HumanoidRootPart.Position
+                                    bodyPosition.Parent = character.HumanoidRootPart
+                                end
+                                if bodyGyro ~= nil then
+                                    bodyGyro.MaxTorque = Vector3.new(30000, 0, 30000)
+                                    bodyGyro.CFrame = CFrame.new(0, 0, 0)
+                                end
+                                isButton1Up = false
+                                if isButton1Down then
+                                    hoverAnimation:Play()
+                                    flyAnimation:Play()
+                                end
+                                flyAnimation:Stop()
+                                wait(0.3)
+                                isFlying = false
+                            end)
+            
+                            inputObject.Button1Up:Connect(function()
+                                sound1:Stop()
+                                sound2:Play()
+                                isButton1Up = false
+                            end)
+                        end)
+            
+                        parent.Unequipped:Connect(function()
+                            game:GetService('RunService'):UnbindFromRenderStep("Noclip")
+                            task.wait()
+                            if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then 
+                                game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CanCollide = true
+                            end
+                            if game.Players.LocalPlayer.Character:FindFirstChild("UpperTorso") then 
+                                game.Players.LocalPlayer.Character:FindFirstChild("UpperTorso").CanCollide = true
+                            end
+                            if game.Players.LocalPlayer.Character:FindFirstChild("LowerTorso") then 
+                                game.Players.LocalPlayer.Character:FindFirstChild("LowerTorso").CanCollide = true
+                            end
+                            sound1:Stop()
+                            sound2:Play()
+                            isButton1Down = false
+                            isButton1Up = false
+                            bodyGyro:Destroy()
+                            bodyGyro = nil
+                            bodyPosition:Destroy()
+                            bodyPosition = nil
+                            if hoverAnimation.IsPlaying then
+                                hoverAnimation:Stop()
+                            end
+                        end)
+                    end))
+            
+                    sound1.Name = "Flapping"
+                    sound1.Parent = localScript
+                    sound1.Looped = true
+                    sound1.MaxDistance = 100
+                    sound1.Pitch = 1.5
+                    sound1.PlaybackSpeed = 1.5
+                    sound1.SoundId = "rbxassetid://1462718291"
+                    sound2.Volume = 0
+            
+                    sound2.Name = "Activation"
+                    sound2.Parent = localScript
+                    sound2.MaxDistance = 100
+                    sound2.SoundId = "rbxassetid://2952274135"
+                    sound2.Volume = 0
+            
+                    animation1.Name = "Hover"
+                    animation1.Parent = localScript
+                    animation1.AnimationId = "rbxassetid://3541114300"
+            
+                    remoteEvent.Name = "re"
+                    remoteEvent.Parent = localScript
+            
+                    animation2.Name = "Fly"
+                    animation2.Parent = localScript
+                    animation2.AnimationId = "rbxassetid://3084858603"
+            
+                    for _, v in pairs(model:GetChildren()) do
+                        v.Parent = game.Players.LocalPlayer.Backpack
+                        pcall(function()
+                            v:MakeJoints()
+                        end)
+                    end
+            
+                    model:Destroy()
+            
+                    for _, v in pairs(coroutines) do
+                        spawn(function()
+                            pcall(v)
+                        end)
+                    end
+                end
+            
+                game.Players.LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
+                Fly()
+            
+            end
+          end)
+        end
+        if not getgenv().ghostfly then 
+            game:GetService('RunService'):UnbindFromRenderStep("Speed")
+            if  game.Players.LocalPlayer.Character:FindFirstChild("Ghost Fly") then 
+                game.Players.LocalPlayer.Character:FindFirstChild("Ghost Fly"):Destroy()
+            else
+                game.Players.LocalPlayer.Backpack:FindFirstChild("Ghost Fly"):Destroy()
+               end
+            end
+        end)
+
+
+        ToolsPage.AddToggle("UwU Fly", false, function(State)
+            getgenv().uwufly = State
+              while getgenv().uwufly == true do task.wait() 
+                  pcall(function()
+                  if not game.Players.LocalPlayer.Character:FindFirstChild("UwU Fly") and not game.Players.LocalPlayer.Backpack:FindFirstChild("UwU Fly") then
+                      
+                      local function Fly()
+                          local function sandbox(var, func)
+                              local env = getfenv(func)
+                              local newenv = setmetatable({}, {
+                                  __index = function(self, k)
+                                      if k == "script" then
+                                          return var
+                                      else
+                                          return env[k]
+                                      end
+                                  end,
+                              })
+                              setfenv(func, newenv)
+                              return func
+                          end
+                  
+                          local coroutines = {}
+                          local model = Instance.new("Model", game:GetService("Lighting"))
+                          local tool = Instance.new("Tool")
+                          local localScript = Instance.new("LocalScript")
+                          local sound1 = Instance.new("Sound")
+                          local sound2 = Instance.new("Sound")
+                          local animation1 = Instance.new("Animation")
+      local animation3 = Instance.new("Animation")
+                          local remoteEvent = Instance.new("RemoteEvent")
+                          local animation2 = Instance.new("Animation")
+                  
+                          tool.Name = "UwU Fly"
+                          tool.Parent = model
+                          tool.CanBeDropped = false
+                          tool.RequiresHandle = false
+                          localScript.Name = "local"
+                          localScript.Parent = tool
+                  
+                          table.insert(coroutines, sandbox(localScript, function()
+                              wait()
+                              local localPlayer = game.Players.LocalPlayer
+                              while true do
+                                  wait()
+                                  if localPlayer.Character then
+                                      break
+                                  end
+                              end
+                              local character = localPlayer.Character
+                              local humanoid = character:WaitForChild("Humanoid")
+                              local parent = script.Parent
+                              local isButton1Down = false
+                              local hoverAnimation = humanoid:LoadAnimation(script.Hover)
+      local hoverAnimation2 = humanoid:LoadAnimation(script.Lay)
+                              local bodyGyro = nil
+                              local bodyPosition = nil
+                              local isButton1Up = false
+                              local isFlying = false
+                              local flyAnimation = humanoid:LoadAnimation(script.Fly)
+                  
+                              parent.Equipped:Connect(function(inputObject)
+                               
+      
+                                  sound2:Play()
+                                  inputObject.TargetFilter = workspace
+                                  isButton1Down = true
+                                  hoverAnimation:Play()
+                                  hoverAnimation2:Play()
+                                  bodyGyro = Instance.new("BodyGyro")
+                                  bodyGyro.Name = "NA"
+                                  bodyGyro.Parent = character.HumanoidRootPart
+                                  bodyGyro.MaxTorque = Vector3.new(30000, 0, 30000)
+                                  bodyGyro.P = bodyGyro.P * 5
+                                  bodyGyro.CFrame = CFrame.new(0, 0, 0)
+                                  bodyPosition = Instance.new("BodyPosition")
+                                  bodyPosition.Name = "NA"
+                                  bodyPosition.Parent = character.HumanoidRootPart
+                                  bodyPosition.MaxForce = Vector3.new(60000, 60000, 60000)
+                                  bodyPosition.Position = character.HumanoidRootPart.Position + Vector3.new(0,4,0)
+                  
+                                  inputObject.Button1Down:Connect(function()
+                                      sound1:Play()
+                                      if isFlying then
+                                          return
+                                      end
+                                      isFlying = true
+                                      isButton1Up = true
+                                      hoverAnimation:Stop()
+                                      hoverAnimation2:Stop()
+                                      flyAnimation:Play()
+                                      local bodyVelocity = Instance.new("BodyVelocity", character.HumanoidRootPart)
+                                      bodyVelocity.MaxForce = Vector3.new(50000, 50000, 50000)
+                                      bodyVelocity.Velocity = CFrame.new(character.HumanoidRootPart.CFrame.p, inputObject.Hit.p).lookVector * 25
+                                      bodyGyro.MaxTorque = Vector3.new(30000, 30000, 30000)
+                                      bodyGyro.CFrame = CFrame.new(character.HumanoidRootPart.CFrame.p, inputObject.Hit.p)
+                                      bodyPosition.Parent = nil
+                                      humanoid.AutoRotate = false
+                   
+      
+                                      while isButton1Up do
+                                          bodyVelocity.Velocity = CFrame.new(character.HumanoidRootPart.CFrame.p, inputObject.Hit.p).lookVector * 25
+                                          bodyGyro.CFrame = CFrame.new(character.HumanoidRootPart.CFrame.p, inputObject.Hit.p)
+                                          game:GetService("RunService").Heartbeat:Wait()
+                                      end
+                                      humanoid.AutoRotate = true
+                                      bodyVelocity:Destroy()
+                                      if bodyPosition ~= nil then
+                                          bodyPosition.Position = character.HumanoidRootPart.Position
+                                          bodyPosition.Parent = character.HumanoidRootPart
+                                      end
+                                      if bodyGyro ~= nil then
+                                          bodyGyro.MaxTorque = Vector3.new(30000, 0, 30000)
+                                          bodyGyro.CFrame = CFrame.new(0, 0, 0)
+                                      end
+                                      isButton1Up = false
+                                      if isButton1Down then
+                                          flyAnimation:Play()
+                                      end
+                                      flyAnimation:Stop()
+                                      wait(0.3)
+                                      isFlying = false
+                                  end)
+                  
+                                  inputObject.Button1Up:Connect(function()
+                                    hoverAnimation:Play()
+                                    hoverAnimation2:Play()
+                                    sound1:Stop()
+                                      sound2:Play()
+                                      isButton1Up = false
+                                  end)
+                              end)
+                  
+                              parent.Unequipped:Connect(function()
+                                  sound1:Stop()
+                                  sound2:Play()
+                                  isButton1Down = false
+                                  isButton1Up = false
+                                  bodyGyro:Destroy()
+                                  bodyGyro = nil
+                                  bodyPosition:Destroy()
+                                  bodyPosition = nil
+                                  if hoverAnimation.IsPlaying then
+                                      hoverAnimation:Stop()
+                                      hoverAnimation2:Stop()
+                                  end
+                              end)
+                          end))
+                  
+                          sound1.Name = "Flapping"
+                          sound1.Parent = localScript
+                          sound1.Looped = true
+                          sound1.MaxDistance = 100
+                          sound1.Pitch = 1.5
+                          sound1.PlaybackSpeed = 1.5
+                          sound1.SoundId = "rbxassetid://1462718291"
+                          sound2.Volume = 0
+                  
+                          sound2.Name = "Activation"
+                          sound2.Parent = localScript
+                          sound2.MaxDistance = 100
+                          sound2.SoundId = "rbxassetid://2952274135"
+                          sound2.Volume = 0
+                  
+                          animation1.Name = "Hover"
+                          animation1.Parent = localScript
+                          animation1.AnimationId = "rbxassetid://3541114300"
+      
+          animation3.Name = "Lay"
+                          animation3.Parent = localScript
+                          animation3.AnimationId = "rbxassetid://3152378852"
+                  
+                          remoteEvent.Name = "re"
+                          remoteEvent.Parent = localScript
+                  
+                          animation2.Name = "Fly"
+                          animation2.Parent = localScript
+                          animation2.AnimationId = "rbxassetid://3084858603"
+                  
+                          for _, v in pairs(model:GetChildren()) do
+                              v.Parent = game.Players.LocalPlayer.Backpack
+                              pcall(function()
+                                  v:MakeJoints()
+                              end)
+                          end
+                  
+                          model:Destroy()
+                  
+                          for _, v in pairs(coroutines) do
+                              spawn(function()
+                                  pcall(v)
+                              end)
+                          end
+                      end
+                  
+                      game.Players.LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
+                      Fly()
+                  
+                  end
+                end)
+              end
+              if not getgenv().uwufly then 
+                  if  game.Players.LocalPlayer.Character:FindFirstChild("UwU Fly") then 
+                      game.Players.LocalPlayer.Character:FindFirstChild("UwU Fly"):Destroy()
+                  else
+                      game.Players.LocalPlayer.Backpack:FindFirstChild("UwU Fly"):Destroy()
+                     end
+                  end
+              end)
+
+        ToolsPage.AddToggle("Glide", false, function(State)
+            getgenv().Glide = State
+            while getgenv().Glide == true do task.wait() 
+                pcall(function()
+                if not game.Players.LocalPlayer.Character:FindFirstChild("Glide") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Glide") then
+                    local outfit = Instance.new("Tool", game.Players.LocalPlayer.Backpack)
+                    outfit.Name = "Glide"
+                    outfit.RequiresHandle = false
+                    local player = game.Players.LocalPlayer
+                    while true do
+                        wait()
+                        if player.Character then
+                            break
+                        end
+                    end
+                    local Animation = Instance.new("Animation")
+                    Animation.AnimationId = "rbxassetid://3084858603"
+                    local char = player.Character
+                    local Humanoid = char:WaitForChild("Humanoid")
+                    local tool = outfit
+                    local u1 = false
+                    local u3 = false
+                    local u4 = Humanoid:LoadAnimation(Animation)
+                    tool.Equipped:connect(function(p1)
+                        p1.Button1Down:connect(function()
+                            if u1 or Humanoid.FloorMaterial ~= Enum.Material.Air then
+                                return
+                            end
+                            u1 = true
+                            u3 = true
+                            u4:Play()
+                            local v5 = Instance.new("BodyVelocity", char.HumanoidRootPart)
+                            v5.MaxForce = Vector3.new(50000, 50000, 50000)
+                            v5.Velocity = (char.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(-18), 0, 0)).lookVector * 40
+                            while u3 and Humanoid.FloorMaterial == Enum.Material.Air do
+                                v5.Velocity = (char.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(-18), 0, 0)).lookVector * 40
+                                game:GetService("RunService").Heartbeat:wait()
+                            end
+                            v5:Destroy()
+                            u3 = false
+                            u4:Stop()
+                            wait(0.3)
+                            u1 = false
+                        end)
+                        p1.Button1Up:connect(function()
+                            u3 = false
+                        end)
+                    end)
+                    tool.Unequipped:connect(function()
+                        u3 = false
+                    end)
+                end
+            end)
+            end
+            if not getgenv().Glide then 
+                if  game.Players.LocalPlayer.Character:FindFirstChild("Glide") then 
+                    game.Players.LocalPlayer.Character:FindFirstChild("Glide"):Destroy()
+                else
+                    game.Players.LocalPlayer.Backpack:FindFirstChild("Glide"):Destroy()
+                   end
+                end
+            end)
+
+
+            ToolsPage.AddToggle("Bat Attack", nil, function(State)
+                getgenv().batattack = State 
+                
+                while getgenv().batattack do task.wait()
+                pcall(function()
+                repeat task.wait()
+                until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+                
+                if not game.Players.LocalPlayer.Character:FindFirstChild("Bat Attack") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Bat Attack") then
+                local b 
+                local batflingtool = Instance.new("Tool")
+                batflingtool.RequiresHandle = false 
+                batflingtool.Name = "Bat Attack"
+                batflingtool.Parent = game.Players.LocalPlayer.Backpack
+                batflingtool.CanBeDropped = false
+                
+                batflingtool.Activated:Connect(function()
+                  game.Players:Chat("/e a")
+                 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+                        game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid"):UnequipTools()
+                         game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Bat Attack").Parent = game:GetService("Players").LocalPlayer.Character
+                         if game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]") then 
+                        local bat = game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]")
+                game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",5696182212)
+                        bat.Parent = game.Players.LocalPlayer.Character
+                        task.wait()
+                        local batswinganim = Instance.new("Animation")
+                        batswinganim.AnimationId = "rbxassetid://3172948973"
+                        local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+                        local anim = humanoid:LoadAnimation(batswinganim)
+                        anim:Play()
+                        anim:AdjustSpeed(1.3)
+                       
+                        wait(1)
+                        game.Players:Chat("/e cm")
+                        task.wait()
+                
+                        if game.Players.LocalPlayer.Character:FindFirstChild("Bat Attack") then 
+                         b = true 
+                        end
+                        task.wait(2)
+                         game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+                        game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid"):UnequipTools()
+                        task.wait()
+                        if b == true then 
+                            game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Bat Attack").Parent = game:GetService("Players").LocalPlayer.Character
+                        b = false 
+                          end 
+                        end
+                      end)
+                     end
+                  end)
+                 end
+                if not getgenv().bad then 
+                    if  game.Players.LocalPlayer.Character:FindFirstChild("Bat Attack") then 
+                        game.Players.LocalPlayer.Character:FindFirstChild("Bat Attack"):Destroy()
+                    else
+                        game.Players.LocalPlayer.Backpack:FindFirstChild("Bat Attack"):Destroy()
+                   end
+                  end
+                end)
+
+
+ToolsPage.AddToggle("Charge Attack", nil, function(State)
+  getgenv().punch = State 
+  
+  while getgenv().punch do task.wait()
+  pcall(function()
+  repeat task.wait()
+  until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+  
+  if not game.Players.LocalPlayer.Character:FindFirstChild("Punch") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Punch") then
+  local b 
+  local cattacktool = Instance.new("Tool")
+  cattacktool.RequiresHandle = false 
+  cattacktool.Name = "Punch"
+  cattacktool.Parent = game.Players.LocalPlayer.Backpack
+  cattacktool.CanBeDropped = false
+  
+  cattacktool.Activated:Connect(function()
+    game.Players:Chat("/e a")
+   game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+          game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid"):UnequipTools()
+          
+           if game.Players.LocalPlayer.Backpack:FindFirstChild("Punch") then 
+          local punch = game.Players.LocalPlayer.Backpack:FindFirstChild("Punch")
+  game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",548348185)
+          punch.Parent = game.Players.LocalPlayer.Character
+          task.wait()
+          local cattack = Instance.new("Animation")
+          cattack.AnimationId = "rbxassetid://2788292075"
+          local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+          local anim = humanoid:LoadAnimation(cattack)
+          anim:Play()
+          anim:AdjustSpeed(1.3)
+          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -15)
+         
+          wait(1)
+          game.Players:Chat("/e cm")
+          task.wait()
+  
+          if game.Players.LocalPlayer.Character:FindFirstChild("Punch") then 
+           b = true 
+          end
+          task.wait(2)
+           game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+          game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid"):UnequipTools()
+          task.wait()
+          if b == true then 
+          
+          b = false 
+            end 
+          end
+        end)
+       end
+    end)
+   end
+  if not getgenv().bad then 
+      if  game.Players.LocalPlayer.Character:FindFirstChild("Punch") then 
+          game.Players.LocalPlayer.Character:FindFirstChild("Punch"):Destroy()
+      else
+          game.Players.LocalPlayer.Backpack:FindFirstChild("Punch"):Destroy()
+     end
+    end
+  end)
+
+  ToolsPage.AddToggle("Bat Fling", nil, function(State)
+    getgenv().batfling = State 
+    
+    while getgenv().batfling do task.wait()
+    pcall(function()
+    repeat task.wait()
+    until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+    
+    if not game.Players.LocalPlayer.Character:FindFirstChild("Bat Fling") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Bat Fling") then
+    local b 
+    local batflingtool = Instance.new("Tool")
+    batflingtool.RequiresHandle = false 
+    batflingtool.Name = "Bat Fling"
+    batflingtool.Parent = game.Players.LocalPlayer.Backpack
+    batflingtool.CanBeDropped = false
+    
+    batflingtool.Activated:Connect(function()
+     game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+            game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+            game:GetService("Players").LocalPlayer.Character:FindFirstChild("Bat Fling").Parent = game:GetService("Players").LocalPlayer.Backpack
+            task.wait(0.0001)
+            game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Bat Fling").Parent = game:GetService("Players").LocalPlayer.Character
+             if game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]") then 
+            local bat = game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]")
+    game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",5696182212)
+    game.Players:Chat("/e cm")
+            bat.Parent = game.Players.LocalPlayer.Character
+            task.wait()
+            local batflinganim = Instance.new("Animation")
+            batflinganim.AnimationId = "rbxassetid://3172948973"
+            local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+            local anim = humanoid:LoadAnimation(batflinganim)
+            anim:Play()
+            anim:AdjustSpeed(1.3)
+            task.wait()
+            getgenv().Push = true
+            task.wait(2.7)
+            getgenv().Push = false
+            if game.Players.LocalPlayer.Character:FindFirstChild("Bat Fling") then 
+             b = true 
+            end
+            task.wait()
+             game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+            game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+            task.wait()
+            if b == true then 
+            game.Players.LocalPlayer.Character:FindFirstChild("[Bat]").Parent = game.Players.LocalPlayer.Backpack
+            b = false 
+              end 
+            end
+          end)
+         end
+      end)
+     end
+    if not getgenv().bad then 
+        if  game.Players.LocalPlayer.Character:FindFirstChild("Bat Fling") then 
+            game.Players.LocalPlayer.Character:FindFirstChild("Bat Fling"):Destroy()
+        else
+            game.Players.LocalPlayer.Backpack:FindFirstChild("Bat Fling"):Destroy()
+       end
+      end
+    end)
+
+    ToolsPage.AddToggle("Thunder", nil, function(State)
+        getgenv().thunder = State 
+        
+        while getgenv().thunder do task.wait()
+        pcall(function()
+        repeat task.wait()
+        until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+        
+        if not game.Players.LocalPlayer.Character:FindFirstChild("Thunder") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Thunder") then
+           local b
+            local thundertool = Instance.new("Tool")
+            thundertool.RequiresHandle = false 
+            thundertool.Name = "Thunder"
+            thundertool.Parent = game.Players.LocalPlayer.Backpack
+            thundertool.CanBeDropped = false
+            thundertool.Activated:Connect(function()
+        local thunderanim = Instance.new("Animation")
+        thunderanim.AnimationId = "rbxassetid://3090585357"
+        local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+        local anim = humanoid:LoadAnimation(thunderanim)
+        anim:Play()
+        anim:AdjustSpeed(0.6)
+        getgenv().Kicks = true
+        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+        game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",1079408535)
+        game.Players:Chat("/e cm")
+        wait(0.2)
+        anim:AdjustSpeed(0.2)
+        wait(1)
+        getgenv().Kicks = false
+               
+              end)
+             end
+          end)
+         end
+        if not getgenv().bad then 
+            if  game.Players.LocalPlayer.Character:FindFirstChild("Thunder") then 
+                game.Players.LocalPlayer.Character:FindFirstChild("Thunder"):Destroy()
+            else
+                game.Players.LocalPlayer.Backpack:FindFirstChild("Thunder"):Destroy()
+           end
+          end
+        end)
+
+
+  ToolsPage.AddToggle("Knife Fling", nil, function(State)
+    getgenv().knife = State 
+    
+    while getgenv().knife do task.wait()
+    pcall(function()
+    repeat task.wait()
+    until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+    
+    if not game.Players.LocalPlayer.Character:FindFirstChild("Knife") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Knife") then
+    local b 
+    local knifetool = Instance.new("Tool")
+    knifetool.RequiresHandle = false 
+    knifetool.Name = "Knife"
+    knifetool.Parent = game.Players.LocalPlayer.Backpack
+    knifetool.CanBeDropped = false
+    
+    knifetool.Activated:Connect(function()
+     game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+            game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+            game:GetService("Players").LocalPlayer.Character:FindFirstChild("Knife").Parent = game:GetService("Players").LocalPlayer.Backpack
+            task.wait(0.0001)
+            game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Knife").Parent = game:GetService("Players").LocalPlayer.Character
+             if game.Players.LocalPlayer.Backpack:FindFirstChild("[Knife]") then 
+            local knife = game.Players.LocalPlayer.Backpack:FindFirstChild("[Knife]")
+    game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",4766121138)
+    game.Players:Chat("/e cm")
+            knife.Parent = game.Players.LocalPlayer.Character
+            task.wait()
+            local knifeanim = Instance.new("Animation")
+            knifeanim.AnimationId = "rbxassetid://7861263376"
+            local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+            local anim = humanoid:LoadAnimation(knifeanim)
+            anim:Play()
+            anim:AdjustSpeed(1)
+            task.wait()
+            getgenv().Push = true
+            task.wait(1.1)
+            getgenv().Push = false
+            if game.Players.LocalPlayer.Character:FindFirstChild("Knife") then 
+             b = true 
+            end
+            task.wait()
+             game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+            game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+            task.wait()
+            if b == true then 
+            game.Players.LocalPlayer.Character:FindFirstChild("[Knife]").Parent = game.Players.LocalPlayer.Backpack
+            b = false 
+              end 
+            end
+          end)
+         end
+      end)
+     end
+    if not getgenv().bad then 
+        if  game.Players.LocalPlayer.Character:FindFirstChild("Knife") then 
+            game.Players.LocalPlayer.Character:FindFirstChild("Knife"):Destroy()
+        else
+            game.Players.LocalPlayer.Backpack:FindFirstChild("Knife"):Destroy()
+       end
+      end
+    end)
+
+
+
+
+ToolsPage.AddToggle("Kick", nil, function(State)
+getgenv().kick = State
+while getgenv().kick do task.wait() 
+pcall(function()
+repeat task.wait()
+until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+        
+if not game.Players.LocalPlayer.Character:FindFirstChild("Kick") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Kick") then
+
+local kicktool = Instance.new("Tool")
+kicktool.RequiresHandle = false 
+kicktool.Name = "Kick"
+kicktool.Parent = game.Players.LocalPlayer.Backpack
+kicktool.CanBeDropped = false
+
+kicktool.Activated:Connect(function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+        wait(0.000001)
+         game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kick").Parent = game:GetService("Players").LocalPlayer.Character
+
+local kek = Instance.new("Animation")
+kek.AnimationId = "rbxassetid://2788306916"
+local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+local anim = humanoid:LoadAnimation(kek)
+anim:Play()
+anim:AdjustSpeed(1)
+wait(0.3)
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",8907573127)
+game.Players:Chat("/e cm")
+task.wait()
+getgenv().Kicks = true
+task.wait(2.4)
+getgenv().Kicks = false
+           end)
+        end
+    end)
+  end
+  if not getgenv().kick then 
+    if  game.Players.LocalPlayer.Character:FindFirstChild("Kick") then 
+        game.Players.LocalPlayer.Character:FindFirstChild("Kick"):Destroy()
+    else
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Kick"):Destroy()
+   end
+   end
+end)
+
+ToolsPage.AddToggle("Upper Cut", nil, function(State)
+    getgenv().uppercut = State
+    while getgenv().uppercut do task.wait() 
+    pcall(function()
+    repeat task.wait()
+    until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+            
+    if not game.Players.LocalPlayer.Character:FindFirstChild("Upper Cut") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Upper Cut") then
+    
+    local kicktool = Instance.new("Tool")
+    kicktool.RequiresHandle = false 
+    kicktool.Name = "Upper Cut"
+    kicktool.Parent = game.Players.LocalPlayer.Backpack
+    kicktool.CanBeDropped = false
+    
+    kicktool.Activated:Connect(function()
+     game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+            game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+            wait(0.000001)
+    local pus = Instance.new("Animation")
+    pus.AnimationId = "rbxassetid://3355740058"
+    local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+    local anim = humanoid:LoadAnimation(pus)
+    anim:Play()
+    anim:AdjustSpeed(1.2)
+    wait(0.3)
+    game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",8595974357)
+    game.Players:Chat("/e cm")
+    task.wait()
+    getgenv().Push = true
+    task.wait(1.3)
+    getgenv().Push = false
+               end)
+            end
+        end)
+      end
+      if not getgenv().kick then 
+        if  game.Players.LocalPlayer.Character:FindFirstChild("Upper Cut") then 
+            game.Players.LocalPlayer.Character:FindFirstChild("Upper Cut"):Destroy()
+        else
+            game.Players.LocalPlayer.Backpack:FindFirstChild("Upper Cut"):Destroy()
+       end
+       end
+    end)
+
+
+ToolsPage.AddToggle("Swing", nil, function(State)
+
+    local Swing1 = Instance.new('Animation', game.ReplicatedStorage)
+    Swing1.AnimationId = 'rbxassetid://8254794168'
+    
+    local Swing2 = Instance.new('Animation', game.ReplicatedStorage)
+    Swing2.AnimationId = 'rbxassetid://8254792138'
+    
+    local Swing3 = Instance.new('Animation', game.ReplicatedStorage)
+    Swing3.AnimationId = 'rbxassetid://8254789608'
+    
+    local Swing4 = Instance.new('Animation', game.ReplicatedStorage)
+    Swing4.AnimationId = 'rbxassetid://8254787838'
+    
+    local _1 = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing1)
+    local _2 = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing2)
+    local _3 = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing3)
+    local _4 = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing4)
+    
+
+
+    getgenv().swing = State
+    while getgenv().swing do task.wait() 
+    pcall(function()
+    repeat task.wait()
+    until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+            
+    if not game.Players.LocalPlayer.Character:FindFirstChild("Swing") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Swing") then
+    
+    local swingtool = Instance.new("Tool")
+    swingtool.RequiresHandle = false 
+    swingtool.Name = "Swing"
+    swingtool.Parent = game.Players.LocalPlayer.Backpack
+    swingtool.CanBeDropped = false
+    
+    swingtool.Activated:Connect(function()
+        local Math = math.random(1, 4)
+        if Math == 1 then
+            _2:Stop()
+            _3:Stop()
+            _1:Play()
+            _4:Stop()
+            _1:AdjustSpeed(1.4)
+            game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",9109910173)
+     game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+            game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+    game.Players:Chat("/e cm")
+    task.wait()
+    getgenv().Push = true
+    task.wait(1.5)
+    getgenv().Push = false
+        elseif Math == 2 then
+            _2:Play()
+            _3:Stop()
+            _1:Stop()
+            _4:Stop()
+            _2:AdjustSpeed(1.4)
+            game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",9109910173)
+     game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+            game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+    game.Players:Chat("/e cm")
+    task.wait()
+    getgenv().Push = true
+    task.wait(1.5)
+    getgenv().Push = false
+elseif Math == 3 then
+    _2:Stop()
+    _3:Play()
+    _1:Stop()
+    _4:Stop()
+    _3:AdjustSpeed(1.4)
+    game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",9109910173)
+    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+           game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+   game.Players:Chat("/e cm")
+task.wait()
+getgenv().Push = true
+task.wait(1.5)
+getgenv().Push = false
+elseif Math == 4 then
+    _2:Stop()
+    _3:Stop()
+    _1:Stop()
+    _4:Play()
+    _4:AdjustSpeed(1.4)
+    game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",9109910173)
+    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+           game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+   game.Players:Chat("/e cm")
+task.wait()
+getgenv().Push = true
+task.wait(1.5)
+getgenv().Push = false
 end
+               end)
+            end
+        end)
+      end
+      if not getgenv().swing then 
+        if  game.Players.LocalPlayer.Character:FindFirstChild("Swing") then 
+            game.Players.LocalPlayer.Character:FindFirstChild("Swing"):Destroy()
+        else
+            game.Players.LocalPlayer.Backpack:FindFirstChild("Swing"):Destroy()
+       end
+       end
+    end)
 
-local function SearchIcon(ButtonOrNot)
-	local NewSearchIcon = Instance.new(ButtonOrNot and "ImageButton" or "ImageLabel")
-	NewSearchIcon.Name = "SearchIcon"
-	NewSearchIcon.BackgroundTransparency = 1
-	NewSearchIcon.Image = IconLibraryID
-	NewSearchIcon.ImageRectOffset = Vector2.new(964,324)
-	NewSearchIcon.ImageRectSize = Vector2.new(36,36)
-	NewSearchIcon.Size = UDim2.new(0,16,0,16)
-	NewSearchIcon.Position = UDim2.new(0,2,0,2)
-	NewSearchIcon.ZIndex = Level
-	return NewSearchIcon
+
+    ToolsPage.AddToggle("Whip", nil, function(State)
+        getgenv().whip = State 
+        
+        while getgenv().whip do task.wait()
+        pcall(function()
+        repeat task.wait()
+        until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+        
+        if not game.Players.LocalPlayer.Character:FindFirstChild("Whip") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Whip") then
+        local b 
+        local whiptool = Instance.new("Tool")
+        whiptool.RequiresHandle = false 
+        whiptool.Name = "Whip"
+        whiptool.Parent = game.Players.LocalPlayer.Backpack
+        whiptool.CanBeDropped = false
+        
+        whiptool.Activated:Connect(function()
+         game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+                game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+                 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Whip").Parent = game:GetService("Players").LocalPlayer.Character
+                 if game.Players.LocalPlayer.Backpack:FindFirstChild("[Nunchucks]") then 
+                local bat = game.Players.LocalPlayer.Backpack:FindFirstChild("[Nunchucks]")
+        game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",4850139555)
+        game.Players:Chat("/e cm")
+                bat.Parent = game.Players.LocalPlayer.Character
+                task.wait()
+                local whipanim = Instance.new("Animation")
+                whipanim.AnimationId = "rbxassetid://7861306542"
+                local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+                local anim = humanoid:LoadAnimation(whipanim)
+                anim:Play()
+                anim:AdjustSpeed(1)
+                task.wait()
+                getgenv().Push = true
+                task.wait(1.1)
+                getgenv().Push = false
+                if game.Players.LocalPlayer.Character:FindFirstChild("Whip") then 
+                 b = true 
+                end
+                task.wait()
+                 game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+                game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+                task.wait()
+                if b == true then 
+                game.Players.LocalPlayer.Backpack:FindFirstChild("Whip").Parent = game.Players.LocalPlayer.Character
+                b = false 
+                  end 
+                end
+              end)
+             end
+          end)
+         end
+        if not getgenv().bad then 
+            if  game.Players.LocalPlayer.Character:FindFirstChild("Whip") then 
+                game.Players.LocalPlayer.Character:FindFirstChild("Whip"):Destroy()
+            else
+                game.Players.LocalPlayer.Backpack:FindFirstChild("Whip"):Destroy()
+           end
+          end
+        end)
+
+
+    local saiodaiou 
+    ToolsPage.AddToggle("Speed", false, function(State)
+    getgenv().Sprint = State
+    while getgenv().Sprint do task.wait() 
+       pcall(function()
+       repeat task.wait()
+       until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+               
+       if not game.Players.LocalPlayer.Character:FindFirstChild("Speed") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Speed") then
+       
+       local sprintool = Instance.new("Tool")
+       sprintool.RequiresHandle = false 
+       sprintool.Name = "Speed"
+       sprintool.Parent = game.Players.LocalPlayer.Backpack
+       sprintool.CanBeDropped = false
+       local speedenabled = false
+       
+       sprintool.Activated:Connect(function()
+       if  speedenabled == false then 
+            speedenabled = true 
+       elseif speedenabled == true then 
+           speedenabled = false
+       end
+       if speedenabled then 
+        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+        game:GetService("Players").LocalPlayer.Character:FindFirstChild("Speed").Parent = game:GetService("Players").LocalPlayer.Backpack
+                                game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",9116274241)
+game.Players:Chat("/e cm")
+wait(0.00000001)
+         game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Speed").Parent = game:GetService("Players").LocalPlayer.Character
+          
+         game:GetService('RunService'):BindToRenderStep("Speed", 0 , function()
+       game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 30
+       end)
+       end
+       if speedenabled == false then 
+        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+                                game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",9116279562)
+                                game:GetService("Players").LocalPlayer.Character:FindFirstChild("Speed").Parent = game:GetService("Players").LocalPlayer.Backpack
+game.Players:Chat("/e cm")
+wait(0.00000001)
+         game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Speed").Parent = game:GetService("Players").LocalPlayer.Character
+          game:GetService('RunService'):UnbindFromRenderStep("Speed")
+       end
+       game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function()
+          game:GetService('RunService'):UnbindFromRenderStep("Speed")
+       end)  
+    
+       end)
+      end
+     end)
+    end
+         if not getgenv().Sprint then 
+               game:GetService('RunService'):UnbindFromRenderStep("Speed")
+           if  game.Players.LocalPlayer.Character:FindFirstChild("Speed") then 
+               game.Players.LocalPlayer.Character:FindFirstChild("Speed"):Destroy()
+           else
+               game.Players.LocalPlayer.Backpack:FindFirstChild("Speed"):Destroy()
+              end
+            end
+    end)
+    
+
+
+ToolsPage.AddToggle("Fake Stomp", nil, function(State)
+getgenv().stomp = State
+while getgenv().stomp do task.wait() 
+pcall(function()
+repeat task.wait()
+until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+        
+if not game.Players.LocalPlayer.Character:FindFirstChild("Fake Stomp") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Fake Stomp") then
+
+local stomptool = Instance.new("Tool")
+stomptool.RequiresHandle = false 
+stomptool.Name = "Fake Stomp"
+stomptool.Parent = game.Players.LocalPlayer.Backpack
+stomptool.CanBeDropped = false
+stomptool.TextureId = "http://www.roblox.com/asset/?id=5843167098"
+
+stomptool.Activated:Connect(function()
+    
+
+
+
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+        game:GetService("Players").LocalPlayer.Character:FindFirstChild("Fake Stomp").Parent = game:GetService("Players").LocalPlayer.Backpack
+        wait(0.000001)
+         game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Fake Stomp").Parent = game:GetService("Players").LocalPlayer.Character
+
+
+local sto = Instance.new("Animation")
+sto.AnimationId = "rbxassetid://2816431506"
+local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+local anim = humanoid:LoadAnimation(sto)
+anim:Play()
+anim:AdjustSpeed(1.5)
+wait(0.4)
+local conect = game:GetService("RunService").Heartbeat:Connect(function(youhaveautism)
+    local oldvelocity = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Velocity
+    game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Velocity = Vector3.new(-90000,-90000,-90000)
+    game:GetService("RunService").RenderStepped:Wait()
+    game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Velocity = oldvelocity
+end)
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",330595293)
+game.Players:Chat("/e cm")
+task.wait(1)
+conect:Disconnect()
+           end)
+        end
+    end)
+  end
+  if not getgenv().stomp then 
+    if  game.Players.LocalPlayer.Character:FindFirstChild("Fake Stomp") then 
+        game.Players.LocalPlayer.Character:FindFirstChild("Fake Stomp"):Destroy()
+    else
+        game.Players.LocalPlayer.Backpack:FindFirstChild("Fake Stomp"):Destroy()
+   end
+   end
+end)
+
+
+
+
+
+
+
+
+
+
+ToolsPage.AddToggle("Teleport", nil, function(State)
+    getgenv().tp = State 
+    
+    while getgenv().tp do task.wait()
+    pcall(function()
+    repeat task.wait()
+    until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+    
+    if not game.Players.LocalPlayer.Character:FindFirstChild("Teleport") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Teleport") then
+    local b 
+    local tptool = Instance.new("Tool")
+    tptool.RequiresHandle = false 
+    tptool.Name = "Teleport"
+    tptool.Parent = game.Players.LocalPlayer.Backpack
+    tptool.CanBeDropped = false
+    
+    tptool.Activated:Connect(function()
+     game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+            game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid"):UnequipTools()
+             if game.Players.LocalPlayer.Backpack:FindFirstChild("Teleport") then 
+            local tps = game.Players.LocalPlayer.Backpack:FindFirstChild("Teleport")
+    game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",6603980575)
+       game.Players:Chat("/e cm")
+       local lokvektor = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector
+       local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Mouse.Hit.X, Mouse.Hit.Y + 2.3, Mouse.Hit.Z)
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position, game.Players.LocalPlayer.Character.HumanoidRootPart.Position + lokvektor) 
+
+            tps.Parent = game.Players.LocalPlayer.Character
+            task.wait()
+            local tpanim = Instance.new("Animation")
+            tpanim.AnimationId = "rbxassetid://698251653"
+            local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+            local anim = humanoid:LoadAnimation(tpanim)
+            anim:Stop()
+            anim:Play()
+            anim:AdjustSpeed(1.3)
+         
+            task.wait()
+    
+            if game.Players.LocalPlayer.Character:FindFirstChild("Teleport") then 
+             b = true 
+            end
+        
+             game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+            game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid"):UnequipTools()
+            task.wait()
+            if b == true then 
+            game.Players.LocalPlayer.Backpack:FindFirstChild("Teleport").Parent = game.Players.LocalPlayer.Character
+            b = false 
+              end 
+            end
+          end)
+         end
+      end)
+     end
+    if not getgenv().bad then 
+        if  game.Players.LocalPlayer.Character:FindFirstChild("Teleport") then 
+            game.Players.LocalPlayer.Character:FindFirstChild("Teleport"):Destroy()
+        else
+            game.Players.LocalPlayer.Backpack:FindFirstChild("Teleport"):Destroy()
+       end
+      end
+    end)
+            
+
+
+            local rafwafa 
+            ToolsPage.AddToggle("Aim Viewer", false, function(State)
+            getgenv().aimviewr = State
+            while getgenv().aimviewr do task.wait() 
+               pcall(function()
+               repeat task.wait()
+               until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+                       
+               if not game.Players.LocalPlayer.Character:FindFirstChild("Aim Viewer") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Aim Viewer") then
+               
+                local aimviewtool = Instance.new("Tool")
+                aimviewtool.RequiresHandle = false 
+                aimviewtool.Name = "Aim Viewer"
+                aimviewtool.Parent = game.Players.LocalPlayer.Backpack
+                aimviewtool.CanBeDropped = false
+                local aimviewenabled = false
+                
+                aimviewtool.Activated:Connect(function()
+                if  aimviewenabled == false then 
+                    aimviewenabled = true 
+                elseif aimviewenabled == true then 
+                    aimviewenabled = false
+                end
+                if aimviewenabled then 
+                
+                getgenv().target = GetClosestToCursor()
+                
+                local highlight = Instance.new("Highlight")
+                highlight.Name = "DownfallHighlight"
+                highlight.Parent = getgenv().target.Character
+                highlight.FillColor = Color3.fromRGB(255, 255, 255)
+                highlight.FillTransparency = 1
+                highlight.OutlineColor = Color3.fromRGB(255,255,255)
+                highlight.OutlineTransparency = 0
+                
+                
+                    local beam = Instance.new("Beam")
+                    beam.Segments = 1
+                    beam.Name = "Downfall"
+                    beam.Width0 = 0.2
+                    beam.Width1 = 0.2
+                    beam.Transparency = NumberSequence.new(0, 0)
+                    beam.Color = ColorSequence.new(Color3.fromRGB(255, 255, 255))
+                    beam.FaceCamera = true
+                     
+                    
+                    local attachment0 = Instance.new("Attachment")
+                    local attachment1 = Instance.new("Attachment")
+                    attachment1.Name = "Downfalla1"
+                    attachment0.Name = "Downfalla0"
+                    beam.Attachment0 = attachment0
+                    beam.Attachment1 = attachment1
+                     
+                    
+                    beam.Parent = workspace.Terrain
+                    attachment0.Parent = workspace.Terrain
+                    attachment1.Parent = workspace.Terrain
+                    getgenv().uwu = true 
+                    while getgenv().uwu do task.wait()
+                   
+                    attachment0.Position = getgenv().target.Character:FindFirstChild("Head").Position
+                    attachment1.Position = getgenv().target.Character.BodyEffects.MousePos.Value
+                    
+                    end
+                end
+                
+                if aimviewenabled == false then 
+                    game:GetService("Workspace").Terrain.Downfall:Destroy()
+                    game:GetService("Workspace").Terrain.Downfalla0:Destroy()
+                    game:GetService("Workspace").Terrain.Downfalla1:Destroy()
+                    getgenv().target.Character.DownfallHighlight:Destroy()
+                end
+            
+               end)
+              end
+             end)
+            end
+                 if not getgenv().Sprint then 
+                   if  game.Players.LocalPlayer.Character:FindFirstChild("Aim Viewer") then 
+                       game.Players.LocalPlayer.Character:FindFirstChild("Aim Viewer"):Destroy()
+                   else
+                       game.Players.LocalPlayer.Backpack:FindFirstChild("Aim Viewer"):Destroy()
+                      end
+                    end
+            end)
+
+            Powers.AddToggle("Wolverine Slash", nil, function(State)
+                getgenv().wolverine = State 
+                
+                while getgenv().wolverine do task.wait()
+                pcall(function()
+                repeat task.wait()
+                until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+                
+                if not game.Players.LocalPlayer.Character:FindFirstChild("Wolverine") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Wolverine") then
+                local b 
+                local WolverineTool = Instance.new("Tool")
+                WolverineTool.RequiresHandle = false 
+                WolverineTool.Name = "Wolverine"
+                WolverineTool.Parent = game.Players.LocalPlayer.Backpack
+                WolverineTool.CanBeDropped = false
+                
+                WolverineTool.Activated:Connect(function()
+                    local Anim = Instance.new("Animation")
+                    Anim.AnimationId = "rbxassetid://7861306542"
+                    function WolvAnim()
+                        local XD = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):LoadAnimation(Anim)
+                        XD:Play()
+                        XD.Looped = false
+                        XD:AdjustSpeed(1.1)
+                    end
+                     game.Players:Chat("/e a")
+                     wait(1)
+                    WolvAnim()
+                    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+                    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+                    game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",935843979)
+                    game.Players:Chat("/e cm")
+                
+                        if game.Players.LocalPlayer.Character:FindFirstChild("Wolverine") then 
+                         b = true 
+                        end
+                        task.wait(1)
+                         game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+                        game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid"):UnequipTools()
+                        task.wait()
+                        if b == true then 
+                            game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Wolverine").Parent = game:GetService("Players").LocalPlayer.Character
+                        b = false 
+                          end 
+                       
+                      end)
+                     end
+                  end)
+                 end
+                if not getgenv().bad then 
+                    if  game.Players.LocalPlayer.Character:FindFirstChild("Wolverine") then 
+                        game.Players.LocalPlayer.Character:FindFirstChild("Wolverine"):Destroy()
+                    else
+                        game.Players.LocalPlayer.Backpack:FindFirstChild("Wolverine"):Destroy()
+                   end
+                  end
+                end)
+
+                Powers.AddToggle("Wolverine Sprint", nil, function(State)
+if State then
+    game:GetService('RunService'):BindToRenderStep("AdminSprint", 0 , function()
+        if game.Players.LocalPlayer.Character.Humanoid.WalkSpeed == 22 then
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 35
+        game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").JumpPower = 70
+        end
+        end)
+    elseif not State then
+        game:GetService('RunService'):UnbindFromRenderStep("AdminSprint")
+    end
+                end)
+                
+                Powers.AddToggle("Wolverine Swing", nil, function(State)
+                    local Swing1 = Instance.new('Animation', game.ReplicatedStorage)
+                    Swing1.AnimationId = 'rbxassetid://8254794168'
+                    
+                    local Swing2 = Instance.new('Animation', game.ReplicatedStorage)
+                    Swing2.AnimationId = 'rbxassetid://8254792138'
+                    
+                    local Swing3 = Instance.new('Animation', game.ReplicatedStorage)
+                    Swing3.AnimationId = 'rbxassetid://8254789608'
+                    
+                    local Swing4 = Instance.new('Animation', game.ReplicatedStorage)
+                    Swing4.AnimationId = 'rbxassetid://8254787838'
+                    
+                    local _1 = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing1)
+                    local _2 = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing2)
+                    local _3 = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing3)
+                    local _4 = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Swing4)
+                    
+                
+                
+                    getgenv().swing2 = State
+                    while getgenv().swing2 do task.wait() 
+                    pcall(function()
+                    repeat task.wait()
+                    until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+                            
+                    if not game.Players.LocalPlayer.Character:FindFirstChild("Wolverine Swing") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Wolverine Swing") then
+                    
+                    local swingtool = Instance.new("Tool")
+                    swingtool.RequiresHandle = false 
+                    swingtool.Name = "Wolverine Swing"
+                    swingtool.Parent = game.Players.LocalPlayer.Backpack
+                    swingtool.CanBeDropped = false
+                    
+                    swingtool.Activated:Connect(function()
+                        local Math = math.random(1, 4)
+                        if Math == 1 then
+                            _2:Stop()
+                            _3:Stop()
+                            _1:Play()
+                            _4:Stop()
+                            _1:AdjustSpeed(1.4)
+                            game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",935843979)
+                     game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+                            game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+                    game.Players:Chat("/e cm")
+                    task.wait()
+                    getgenv().Push = true
+                    task.wait(1.5)
+                    getgenv().Push = false
+                        elseif Math == 2 then
+                            _2:Play()
+                            _3:Stop()
+                            _1:Stop()
+                            _4:Stop()
+                            _2:AdjustSpeed(1.4)
+                            game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",935843979)
+                     game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+                            game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+                    game.Players:Chat("/e cm")
+                    task.wait()
+                    getgenv().Push = true
+                    task.wait(1.5)
+                    getgenv().Push = false
+                elseif Math == 3 then
+                    _2:Stop()
+                    _3:Play()
+                    _1:Stop()
+                    _4:Stop()
+                    _3:AdjustSpeed(1.4)
+                    game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",935843979)
+                    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+                           game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+                   game.Players:Chat("/e cm")
+                task.wait()
+                getgenv().Push = true
+                task.wait(1.5)
+                getgenv().Push = false
+                elseif Math == 4 then
+                    _2:Stop()
+                    _3:Stop()
+                    _1:Stop()
+                    _4:Play()
+                    _4:AdjustSpeed(1.4)
+                    game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",935843979)
+                    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+                           game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+                   game.Players:Chat("/e cm")
+                task.wait()
+                getgenv().Push = true
+                task.wait(1.5)
+                getgenv().Push = false
+                end
+                               end)
+                            end
+                        end)
+                      end
+                      if not getgenv().swing2 then 
+                        if  game.Players.LocalPlayer.Character:FindFirstChild("Wolverine Swing") then 
+                            game.Players.LocalPlayer.Character:FindFirstChild("Wolverine Swing"):Destroy()
+                        else
+                            game.Players.LocalPlayer.Backpack:FindFirstChild("Wolverine Swing"):Destroy()
+                       end
+                       end
+                end)
+
+                Powers.AddToggle("Wolverine Thing", nil, function(State)
+                    local anim = Instance.new("Animation")
+                    anim.AnimationId = "rbxassetid://10714177846"
+                    local loadanim = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+                    loadanim.Priority = Enum.AnimationPriority.Action
+                    loadanim:Play()
+                    wait(5.8)
+                    loadanim:Stop()
+                end)
+
+
+                Powers.AddToggle("Web Swing", nil, function(State)
+                    getgenv().webswing = State
+                    while getgenv().webswing do task.wait() 
+                       pcall(function()
+                       repeat task.wait()
+                       until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+                               
+                       if not game.Players.LocalPlayer.Character:FindFirstChild("Web Swing") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Web Swing") then
+                       
+                       local sprintool = Instance.new("Tool")
+                       sprintool.RequiresHandle = false 
+                       sprintool.Name = "Web Swing"
+                       sprintool.Parent = game.Players.LocalPlayer.Backpack
+                       sprintool.CanBeDropped = false
+                       local swinga = false
+                       
+                       sprintool.Activated:Connect(function()
+                       if  swinga == false then 
+                        swinga = true 
+                       elseif swinga == true then 
+                        swinga = false
+                       end
+                       if swinga then
+            
+                        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+                        game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid"):UnequipTools()
+                  game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",8106837745)
+                  game.Players:Chat("/e cm")
+                  wait(0.00000000000011)
+                  game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Web Swing").Parent = game:GetService("Players").LocalPlayer.Character
+            
+                        local starta = Instance.new("Animation")
+                        starta.AnimationId = "rbxassetid://3135389157"
+                        startanim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(starta)
+                        startanim:Play()
+                  task.wait(0.15)
+            
+            
+            
+            local localPlayer = game.Players.LocalPlayer
+             
+            
+            local beam = Instance.new("Beam")
+            beam.Segments = 1
+            beam.Width0 = 3
+            beam.Width1 = 3
+            beam.Color = ColorSequence.new(Color3.new(255, 255, 255))
+            beam.Texture = "rbxassetid://8599205743"
+            beam.FaceCamera = true
+             
+            
+            local attachment0 = Instance.new("Attachment")
+            local attachment1 = Instance.new("Attachment")
+            beam.Attachment0 = attachment0
+            beam.Attachment1 = attachment1
+             
+            
+            beam.Parent = workspace.Terrain
+            attachment0.Parent = workspace.Terrain
+            attachment1.Parent = workspace.Terrain
+             
+            
+            local mouse = game.Players.LocalPlayer:GetMouse()
+             
+            
+             
+            
+             local character = localPlayer.Character
+             if not character then
+            
+              beam.Enabled = false
+              return
+             end
+             
+            
+             local head = character:FindFirstChild("RightHand")
+             if not head then
+            
+              beam.Enabled = false
+              return
+             end
+             
+            
+             beam.Enabled = true
+             
+            
+             local origin = head.Position
+             local finish = mouse.Hit.p
+             
+            
+             attachment0.Position = origin
+             attachment1.Position = finish
+            
+            
+            
+                        local swing = Instance.new("Animation")
+                        swing.AnimationId = "rbxassetid://3135793091"
+                        sanim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(swing)
+                        sanim:Play()
+                  task.wait()
+            
+            
+            
+               
+                        
+                  local Rotation = game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame - game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').Position;
+                  local Tween = game:GetService('TweenService'):Create(game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart'), TweenInfo.new(.5, Enum.EasingStyle.Linear), {CFrame = CFrame.new(game:GetService('Players').LocalPlayer:GetMouse().Hit.X, game:GetService('Players').LocalPlayer:GetMouse().Hit.Y + 5, game:GetService('Players').LocalPlayer:GetMouse().Hit.Z) * Rotation})
+                  Tween:Play();
+                  game:GetService("TweenService"):Create(workspace.CurrentCamera, TweenInfo.new(0.3), {FieldOfView = 86}):Play()
+            wait(.5)
+            beam.Enabled = false
+                sanim:Stop()
+                game:GetService("TweenService"):Create(workspace.CurrentCamera, TweenInfo.new(0.3), {FieldOfView = oldfov}):Play()
+                local swingexit = Instance.new("Animation")
+                swingexit.AnimationId = "rbxassetid://3136090876"
+                seanim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(swingexit)
+                seanim:Play()
+            task.wait(.4)
+            seanim:Stop()
+            
+                          game:GetService('RunService'):BindToRenderStep("qaf", 0 , function()
+                       end)
+                       end
+                       if swinga == false then 
+                        game:GetService('RunService'):UnbindFromRenderStep("qaf")
+                        task.wait()
+                         
+                       end
+                       game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function()
+                          game:GetService('RunService'):UnbindFromRenderStep("qaf")
+                       end)  
+                    
+                       end)
+                      end
+                     end)
+                    end
+                    if not getgenv().bad then 
+                        if  game.Players.LocalPlayer.Character:FindFirstChild("Web Swing") then 
+                            game.Players.LocalPlayer.Character:FindFirstChild("Web Swing"):Destroy()
+                        else
+                            game.Players.LocalPlayer.Backpack:FindFirstChild("Web Swing"):Destroy()
+                       end
+                      end
+                    end)
+
+            local fawo0lfagha0o
+            Powers.AddToggle("Grapple", nil, function(State)
+            getgenv().batgrap = State
+            while getgenv().batgrap do task.wait() 
+               pcall(function()
+               repeat task.wait()
+               until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR")
+                       
+               if not game.Players.LocalPlayer.Character:FindFirstChild("Grapple") and not game.Players.LocalPlayer.Backpack:FindFirstChild("Grapple") then
+               
+               local sprintool = Instance.new("Tool")
+               sprintool.RequiresHandle = false 
+               sprintool.Name = "Grapple"
+               sprintool.Parent = game.Players.LocalPlayer.Backpack
+               sprintool.CanBeDropped = false
+               local swinga = false
+               
+               sprintool.Activated:Connect(function()
+               if  swinga == false then 
+                swinga = true 
+               elseif swinga == true then 
+                swinga = false
+               end
+               if swinga then
+    
+
+                local starss = Instance.new("Animation")
+                starss.AnimationId = "rbxassetid://3090585357"
+                sanims = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(starss)
+                sanims:Play()
+    
+                wait(0.15)
+    
+                game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+                game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+                game:GetService("Players").LocalPlayer.Character["Grapple"].Parent = game:GetService("Players").LocalPlayer.Backpack
+                game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",4780469887)
+                game.Players:Chat("/e cm")
+                task.wait(0.001)
+                game:GetService("Players").LocalPlayer.Backpack["Grapple"].Parent = game:GetService("Players").LocalPlayer.Character
+
+    local localPlayer = game.Players.LocalPlayer
+     
+    
+    local beam = Instance.new("Beam")
+    beam.Segments = 1
+    beam.Width0 = 0.1
+    beam.Width1 = 0.1
+    beam.Color = ColorSequence.new(Color3.new(0, 0, 0))
+    beam.FaceCamera = true
+     
+    
+    local attachment0 = Instance.new("Attachment")
+    local attachment1 = Instance.new("Attachment")
+    beam.Attachment0 = attachment0
+    beam.Attachment1 = attachment1
+     
+    
+    beam.Parent = workspace.Terrain
+    attachment0.Parent = workspace.Terrain
+    attachment1.Parent = workspace.Terrain
+     
+    
+    local mouse = game.Players.LocalPlayer:GetMouse()
+     
+    
+     
+    
+     local character = localPlayer.Character
+     if not character then
+    
+      beam.Enabled = false
+      return
+     end
+     
+    
+     local head = character:FindFirstChild("RightHand")
+     if not head then
+    
+      beam.Enabled = false
+      return
+     end
+     
+    
+     beam.Enabled = true
+     
+    
+     local origin = head.Position
+     local finish = mouse.Hit.p
+     
+    
+     attachment0.Position = origin
+     attachment1.Position = finish
+    
+    
+
+
+    
+                local grappling = Instance.new("Animation")
+                grappling.AnimationId = "rbxassetid://3090583403"
+                ganim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(grappling)
+                ganim:Play()
+          task.wait()
+    
+    
+       
+                
+          local Rotation = game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame - game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').Position;
+          local Tween = game:GetService('TweenService'):Create(game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart'), TweenInfo.new(2, Enum.EasingStyle.Linear), {CFrame = CFrame.new(game:GetService('Players').LocalPlayer:GetMouse().Hit.X, game:GetService('Players').LocalPlayer:GetMouse().Hit.Y + 5, game:GetService('Players').LocalPlayer:GetMouse().Hit.Z) * Rotation})
+          Tween:Play();
+          game:GetService("TweenService"):Create(workspace.CurrentCamera, TweenInfo.new(0.3), {FieldOfView = oldfov}):Play()
+    wait(2)
+    ganim:Stop()
+    beam.Enabled = false
+        sanims:Stop()
+        game:GetService("TweenService"):Create(workspace.CurrentCamera, TweenInfo.new(0.3), {FieldOfView = oldfov}):Play()
+        local landa = Instance.new("Animation")
+        landa.AnimationId = "rbxassetid://3090584355"
+        lanim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(landa)
+        lanim:Play()
+        wait(0.35)
+        lanim:Stop()
+                  game:GetService('RunService'):BindToRenderStep("qaf", 0 , function()
+               end)
+               end
+               if swinga == false then 
+                game:GetService('RunService'):UnbindFromRenderStep("qaf")
+                task.wait()
+                 
+               end
+               game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function()
+                  game:GetService('RunService'):UnbindFromRenderStep("qaf")
+               end)  
+            
+               end)
+              end
+             end)
+            end
+            if not getgenv().bad then 
+                if  game.Players.LocalPlayer.Character:FindFirstChild("Grapple") then 
+                    game.Players.LocalPlayer.Character:FindFirstChild("Grapple"):Destroy()
+                else
+                    game.Players.LocalPlayer.Backpack:FindFirstChild("Grapple"):Destroy()
+               end
+              end
+            end)
+
+
+MusicPage.AddButton("Stop Song", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+end)
+
+MusicPage.AddToggle("Discord Call", nil, function(Value)
+    getgenv().discordcall = Value
+    while getgenv().discordcall do task.wait()
+        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+        game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",4814018992)
+        game.Players:Chat("/e cm")
+        wait(5.7)
+    end
+    end)
+
+MusicPage.AddToggle("Alarm", nil, function(Value)
+getgenv().iphonealarm = Value
+while getgenv().iphonealarm do task.wait()
+    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+    game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",4203251375)
+    game.Players:Chat("/e cm")
+    wait(4)
 end
+end)
 
-local function RoundBox(CornerRadius, ButtonOrNot)
-	local NewRoundBox = Instance.new(ButtonOrNot and "ImageButton" or "ImageLabel")
-	NewRoundBox.BackgroundTransparency = 1
-	NewRoundBox.Image = "rbxassetid://3570695787"
-	NewRoundBox.SliceCenter = Rect.new(100,100,100,100)
-	NewRoundBox.SliceScale = math.clamp((CornerRadius or 5) * 0.01, 0.01, 1)
-	NewRoundBox.ScaleType = Enum.ScaleType.Slice
-	NewRoundBox.ZIndex = Level
-	return NewRoundBox
+
+
+MusicPage.AddButton("Paradise Falls", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",1837879082)
+game.Players:Chat("/e cm")
+end)
+
+MusicPage.AddButton("Shiawase", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",5409360995)
+game.Players:Chat("/e cm")
+end)
+
+MusicPage.AddButton("New Discord Account", function()
+    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+           game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+   game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",7006487793)
+   game.Players:Chat("/e cm")
+   end)
+
+   MusicPage.AddButton("7SAKU7 - GTA (Nightcore)", function()
+    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+           game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+   game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",14366981664)
+   game.Players:Chat("/e cm")
+   end)
+
+   MusicPage.AddButton("jugsta - Lies", function()
+    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+           game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+   game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",14884824647)
+   game.Players:Chat("/e cm")
+   end)
+
+   MusicPage.AddButton("Sirfake - Slayer's Hatred", function()
+    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+           game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+   game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",11265137944)
+   game.Players:Chat("/e cm")
+   end)
+
+   MusicPage.AddButton("FNAF", function()
+    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+           game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+   game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",6913550990)
+   game.Players:Chat("/e cm")
+   end)
+
+   
+   MusicPage.AddButton("Horror", function()
+    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+           game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+   game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",9041745502)
+   game.Players:Chat("/e cm")
+   end)
+
+MusicPage.AddButton("Nya", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",6797864253)
+game.Players:Chat("/e cm")
+end)
+
+MusicPage.AddButton("Uwu", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",8679659744)
+game.Players:Chat("/e cm")
+end)
+
+MusicPage.AddButton("Pussy", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",6858745393)
+game.Players:Chat("/e cm")
+end)
+
+MusicPage.AddButton("Fatty", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",4913033409)
+game.Players:Chat("/e cm")
+end)
+
+MusicPage.AddButton("Hitler Speech", function()
+    local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://698251653"
+local a = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+a:Play()
+wait(0.32)
+a:AdjustSpeed(0)
+
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",5184863751)
+game.Players:Chat("/e cm")
+wait(15)
+a:Stop()
+end)
+
+MusicPage.AddButton("Stop Being A Faggot", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",9103615057)
+game.Players:Chat("/e cm")
+end)
+
+MusicPage.AddButton("Victory Royale", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",5205229311)
+game.Players:Chat("/e cm")
+end)
+
+
+
+
+------------------------------------
+
+
+EmojiPage.AddButton("Hi", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",154147007)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("👋", "All")
+game.Players:Chat("/e cm")
+end)
+
+EmojiPage.AddButton("Bye", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",154157386)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("👋", "All")
+game.Players:Chat("/e cm")
+end)
+
+
+EmojiPage.AddButton("Flushed", function()
+    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+           game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+   game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",9062874339)
+   game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("😳", "All")
+   game.Players:Chat("/e cm")
+   end)
+
+EmojiPage.AddButton("Excited", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",154157524)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("😄", "All")
+game.Players:Chat("/e cm")
+end)
+
+
+EmojiPage.AddButton("Sad", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",154146535)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("😭", "All")
+game.Players:Chat("/e cm")
+end)
+
+EmojiPage.AddButton("Laugh", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",154157543)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("😂", "All")
+game.Players:Chat("/e cm")
+end)
+
+EmojiPage.AddButton("Thinking", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",154157584)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("🤔", "All")
+game.Players:Chat("/e cm")
+end)
+
+EmojiPage.AddButton("Scared", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",154157563)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("😱", "All")
+game.Players:Chat("/e cm")
+end)
+
+EmojiPage.AddButton("Amazed", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",154157291)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("😮", "All")
+game.Players:Chat("/e cm")
+end)
+
+
+EmojiPage.AddButton("Angry", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",154157312)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("😡", "All")
+game.Players:Chat("/e cm")
+end)
+
+EmojiPage.AddButton("Confused", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",154157416)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("😕", "All")
+game.Players:Chat("/e cm")
+end)
+
+EmojiPage.AddButton("Sleep", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",868409374)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("😴", "All")
+game.Players:Chat("/e cm")
+end)
+
+EmojiPage.AddButton("Disgust", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",1598222229)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("🤮", "All")
+game.Players:Chat("/e cm")
+end)
+
+EmojiPage.AddButton("Fart", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",6577701238)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("🤢", "All")
+game.Players:Chat("/e cm")
+end)
+
+EmojiPage.AddButton("Evil Laugh", function()
+ game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("[Phone]").Parent = game:GetService("Players").LocalPlayer.Character
+        game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent = game:GetService("Players").LocalPlayer.Backpack
+game:GetService("ReplicatedStorage").MainEvent:FireServer("RingTone",1601659619)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("😈", "All")
+game.Players:Chat("/e cm")
+end)
+
+
+
+
+HalloweenPage.AddToggle("Enable Fog", nil, function(Value)
+if Value == true then
+    game.Players:Chat("/e fog")
+elseif Value == false then
+    game.Players:Chat("/e stopfog")
 end
+end)
 
-local function DropShadow()
-	local NewDropShadow = Instance.new("ImageLabel")
-	NewDropShadow.Name = "DropShadow"
-	NewDropShadow.BackgroundTransparency = 1
-	NewDropShadow.Image = DropShadowID
-	NewDropShadow.ImageTransparency = DropShadowTransparency
-	NewDropShadow.Size = UDim2.new(1,0,1,0)
-	NewDropShadow.ZIndex = Level
-	return NewDropShadow
-end
+HalloweenPage.AddSlider("Fog Height", {Min = 15, Max = 70, Def = 15}, function(Value)
+game.Players:Chat("/e fog"..Value)
+end)
 
-local function Frame()
-	local NewFrame = Instance.new("Frame")
-	NewFrame.BorderSizePixel = 0
-	NewFrame.ZIndex = Level
-	return NewFrame
-end
+HalloweenPage.AddButton("Go Invisible", function()
+    local Speed = 20
+    local RigWalk = nil
+    local RigIdle = nil
+    local Invisible = false
+    local WalkSpeed = false
+    local LocalPlayer = game.Players.LocalPlayer 
+    local OldChar = LocalPlayer.Character
+    local Fling = false
+    local Fling2 = false
+    local WalkAnimation = Instance.new("Animation", game.ReplicatedStorage.ClientAnimations)
+    WalkAnimation.AnimationId = "rbxassetid://10921076136"
+    local Idle = Instance.new("Animation", game.ReplicatedStorage.ClientAnimations)
+    Idle.AnimationId = "rbxassetid://10921071918"
+    
+    function AddVelocity(Vel, Char)
+    Char.HumanoidRootPart.Velocity = Char.HumanoidRootPart.Velocity+Vel
+    end
+    
+    
+    
+    function ModelCharacter()
+    if workspace:FindFirstChild(LocalPlayer.Name.."StringKOD") == nil then
+    
+    local MODEL = Instance.new("Model", workspace)
+    MODEL.Name = LocalPlayer.Name.."StringKOD"
+    OldChar.Humanoid:UnequipTools()
+    local NewCharacter = game:GetObjects("rbxassetid://9804907350")[1]
+    local OldCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    NewCharacter.Parent = MODEL
+    NewCharacter.Name = "Idaro"
+    workspace.Camera.CameraSubject = NewCharacter.Humanoid
+    Invisible = true
+    NewCharacter.HumanoidRootPart.CFrame = OldCFrame
+    RigIdle = NewCharacter:WaitForChild("Humanoid"):LoadAnimation(Idle)
+    RigIdle.Looped = true
+    RigIdle.Priority = Enum.AnimationPriority.Action
+    RigWalk = NewCharacter:WaitForChild("Humanoid"):LoadAnimation(WalkAnimation)
+    RigWalk.Looped = true
+    RigWalk.Priority = Enum.AnimationPriority.Action
+    WalkSpeed = true
+    RigIdle:Play()
+    else
+    game:GetService('RunService'):UnbindFromRenderStep("FFF")
+    Invisible = false
+    WalkSpeed = false
+    workspace.Camera.CameraSubject =  OldChar.Humanoid
+    OldChar.HumanoidRootPart.CFrame =  workspace:FindFirstChild(LocalPlayer.Name.."StringKOD").Idaro.HumanoidRootPart.CFrame
+    workspace:FindFirstChild(LocalPlayer.Name.."StringKOD"):Destroy()
+    end
+    end
+    
+    local Mouse = game.Players.LocalPlayer:GetMouse()
+    
+    local MoveDirection = Vector3.new(0,0,0)
+    local WSpped = 0 
+    local LeftSpeed = 0
+    local UpSpeed = 0
+    local uis = game:GetService("UserInputService")
+    
+    function IdleRigXD()
+    if RigIdle and RigWalk.IsPlaying and WSpped == 0 and LeftSpeed == 0 and UpSpeed == 0 then
+    RigIdle:Play()
+    RigWalk:Stop()
+    end
+    end
+    
+    function WalkRigXD()
+    if RigWalk and RigIdle.IsPlaying then
+    RigIdle:Stop()
+    RigWalk:Play()
+    end
+    end
+    
+    local Mouse = game.Players.LocalPlayer:GetMouse()
+    
+    local MoveDirection = Vector3.new(0,0,0)
+    local WSpped = 0 
+    local LeftSpeed = 0
+    local UpSpeed = 0
+    local uis = game:GetService("UserInputService")
+    
+    function IdleRigXD()
+    if RigIdle and RigWalk.IsPlaying and WSpped == 0 and LeftSpeed == 0 and UpSpeed == 0 then
+    RigIdle:Play()
+    RigWalk:Stop()
+    end
+    end
+    
+    function WalkRigXD()
+    if RigWalk and RigIdle.IsPlaying then
+    RigIdle:Stop()
+    RigWalk:Play()
+    end
+    end
+    
+    Mouse.KeyDown:Connect(function(KeyDownXD)
+    if workspace:FindFirstChild(LocalPlayer.Name.."StringKOD") then
+    if KeyDownXD == "w" then
+    WSpped = -1
+    WalkRigXD()
+    elseif KeyDownXD == "a" then
+    LeftSpeed = -1
+    WalkRigXD()
+    elseif KeyDownXD == "d" then
+    LeftSpeed = 1
+    WalkRigXD()
+    elseif KeyDownXD == "s" then
+    WSpped = 1
+    WalkRigXD()
+    end
+    end
+    end)
+    
+    Mouse.KeyUp:Connect(function(KeyDownXD)
+    if KeyDownXD == "w" then
+    WSpped = 0
+    IdleRigXD()
+    elseif KeyDownXD == "a" then
+    LeftSpeed = 0
+    IdleRigXD()
+    elseif KeyDownXD == "d" then
+    LeftSpeed = -0
+    IdleRigXD()
+    elseif KeyDownXD == "s" then
+    WSpped = 0
+    IdleRigXD()
+    end
+    end)
+    
+    
+    game["Run Service"].Heartbeat:Connect(function()
+    if Invisible then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+    game.Players.LocalPlayer.Character.Head.CanCollide = false
+    game.Players.LocalPlayer.Character.Head.Anchored = true
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Transparency = 0
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Material = "ForceField"
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Size = Vector3.new(1.5,1.7,0.7)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Color = Color3.fromRGB(255,255,255)
+    game.Players.LocalPlayer.Character.Head.CFrame = workspace:FindFirstChild(LocalPlayer.Name.."StringKOD").Idaro.HumanoidRootPart.CFrame * CFrame.new(0, -20, 0)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace:FindFirstChild(LocalPlayer.Name.."StringKOD").Idaro.HumanoidRootPart.CFrame * CFrame.new(0, -0.1, -0.2)
+    end
+    if WalkSpeed == true then
+    MoveDirection = Vector3.new(LeftSpeed, UpSpeed, WSpped)
+    workspace:FindFirstChild(LocalPlayer.Name.."StringKOD"):FindFirstChild("Idaro").Humanoid:Move(MoveDirection, true)
+    end
+    end)
+    
+    
+    
+    game:GetService('RunService').Stepped:connect(function()
+    local plrname = game.Players.LocalPlayer.Name
+    if game.workspace:FindFirstChild(plrname.. "StringKOD") then
+    workspace:FindFirstChild(LocalPlayer.Name.."StringKOD").Idaro.Humanoid.WalkSpeed = Speed
+    end
+    end)
+    
+    
+    game:GetService('RunService').Stepped:connect(function()
+    LocalPlayer = game:GetService("Players").LocalPlayer
+    OldChar = LocalPlayer.Character
+    end)
+    
+    
+    uis.InputBegan:Connect(function(i)
+    if i.KeyCode == Enum.KeyCode.Space then 
+    local plrname = game.Players.LocalPlayer.Name
+    if game.workspace:FindFirstChild(plrname.. "StringKOD") then
+    workspace:FindFirstChild(game.Players.LocalPlayer.Name.."StringKOD"):FindFirstChild("Idaro").Humanoid:ChangeState(3)
+    end
+    end
+    end)
+    
+    
+    
+    if game.Players.LocalPlayer.Character:FindFirstChild("GRABBING_CONSTRAINT") then
+    game.Players.LocalPlayer.Character.Humanoid.RigType = "R6"
+    wait(0.1)
+    game.Players.LocalPlayer.Character.Humanoid.MaxHealth = 99e99
+    game:GetService("Workspace").FallenPartsDestroyHeight = math.huge-math.huge
+    wait(0.1)
+    ModelCharacter()
+    wait(1)
+    while wait(1) do
+    if game.Players:FindFirstChild("SunnySkitIIe") then
+    game.Players.SunnySkitIIe.Character.HumanoidRootPart.Transparency = 0
+    end
+    end
+    
+    end
+    
+end)
 
-local function ScrollingFrame()
-	local NewScrollingFrame = Instance.new("ScrollingFrame")
-	NewScrollingFrame.BackgroundTransparency = 1
-	NewScrollingFrame.BorderSizePixel = 0
-	NewScrollingFrame.ScrollBarThickness = 0
-	NewScrollingFrame.ZIndex = Level
-	return NewScrollingFrame
-end
+HalloweenPage.AddToggle("Invisible Tp Walk", nil, function(Value)
+    getgenv().invistpwalk = Value
+    while getgenv().invistpwalk do task.wait()
+    workspace[game.Players.LocalPlayer.Name.."StringKOD"].Idaro.HumanoidRootPart.CFrame = workspace[game.Players.LocalPlayer.Name.."StringKOD"].Idaro.HumanoidRootPart.CFrame + workspace[game.Players.LocalPlayer.Name.."StringKOD"].Idaro.Humanoid.MoveDirection * getgenv().invistpwalkspeed
+    end
+end)
 
-local function TextButton(Text, Size)
-	local NewTextButton = Instance.new("TextButton")
-	NewTextButton.Text = Text
-	NewTextButton.AutoButtonColor = false
-	NewTextButton.Font = MainFont
-	NewTextButton.TextColor3 = Color3.fromRGB(255,255,255)
-	NewTextButton.BackgroundTransparency = 1
-	NewTextButton.TextSize = Size or 12
-	NewTextButton.Size = UDim2.new(1,0,1,0)
-	NewTextButton.ZIndex = Level
-	return NewTextButton
-end
+HalloweenPage.AddSlider("Invisible Tp Walk Speed", {Min = 1, Max = 10, Def = 1}, function(Value)
+    getgenv().invistpwalkspeed = Value
+    end)
 
-local function TextBox(Text, Size)
-	local NewTextBox = Instance.new("TextBox")
-	NewTextBox.Text = Text
-	NewTextBox.Font = MainFont
-	NewTextBox.TextColor3 = Color3.fromRGB(255,255,255)
-	NewTextBox.BackgroundTransparency = 1
-	NewTextBox.TextSize = Size or 12
-	NewTextBox.Size = UDim2.new(1,0,1,0)
-	NewTextBox.ZIndex = Level
-	return NewTextBox
-end
 
-local function TextLabel(Text, Size)
-	local NewTextLabel = Instance.new("TextLabel")
-	NewTextLabel.Text = Text
-	NewTextLabel.Font = MainFont
-	NewTextLabel.TextColor3 = Color3.fromRGB(255,255,255)
-	NewTextLabel.BackgroundTransparency = 1
-	NewTextLabel.TextSize = Size or 12
-	NewTextLabel.Size = UDim2.new(1,0,1,0)
-	NewTextLabel.ZIndex = Level
-	return NewTextLabel
-end
+    getgenv().tpwalkspeed = 1
 
-local function Tween(GuiObject, Dictionary)
-	local TweenBase = TweenService:Create(GuiObject, GlobalTweenInfo, Dictionary)
-	TweenBase:Play()
-	return TweenBase
-end
+TestPage.AddToggle("Tp Walk", nil, function(Value)
+getgenv().tpwalk = Value
+while getgenv().tpwalk do task.wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.Humanoid.MoveDirection * getgenv().tpwalkspeed
+    end
+end)
 
-local UILibrary = {}
+TestPage.AddSlider("Invisible Tp Walk Speed", {Min = 1, Max = 10, Def = 1}, function(Value)
+    getgenv().tpwalkspeed = Value
+ end)
 
-function UILibrary.Load(GUITitle)
-	local TargetedParent = RunService:IsStudio() and Player:WaitForChild("PlayerGui") or CoreGuiService
-	
-	local FindOldInstance = TargetedParent:FindFirstChild(GUITitle)
-	
-	if FindOldInstance then
-		FindOldInstance:Destroy()
-	end
-	
-	local NewInstance, ContainerFrame, ContainerShadow, MainFrame
-	
-	NewInstance = Instance.new("ScreenGui")
-	NewInstance.Name = GUITitle
-	NewInstance.Parent = TargetedParent
-	
-	ContainerFrame = Frame()
-	ContainerFrame.Name = "ContainerFrame"
-	ContainerFrame.Size = UDim2.new(0,500,0,300)
-	ContainerFrame.Position = UDim2.new(0.5,-250,0.5,-150)
-	ContainerFrame.BackgroundTransparency = 1
-	ContainerFrame.Parent = NewInstance
-	
-	ContainerShadow = DropShadow()
-	ContainerShadow.Name = "Shadow"
-	ContainerShadow.Parent = ContainerFrame
-	
-	Level += 1
-	
-	MainFrame = RoundBox(5)
-	MainFrame.ClipsDescendants = true
-	MainFrame.Name = "MainFrame"
-	MainFrame.Size = UDim2.new(1,-50,1,-30)
-	MainFrame.Position = UDim2.new(0,25,0,15)
-	MainFrame.ImageColor3 = Color3.fromRGB(215,80,10)
-	MainFrame.Parent = ContainerFrame
-	
-	local MenuBar, DisplayFrame, TitleBar
-	
-	MenuBar = ScrollingFrame()
-	MenuBar.Name = "MenuBar"
-	MenuBar.BackgroundTransparency = 0.7
-	MenuBar.BackgroundColor3 = Color3.fromRGB(215,70,10)
-	MenuBar.Size = UDim2.new(0,100,0,235)
-	MenuBar.Position = UDim2.new(0,5,0,30)
-	MenuBar.CanvasSize = UDim2.new(0,0,0,0)
-	MenuBar.Parent = MainFrame
-	
-	DisplayFrame = RoundBox(5)
-	DisplayFrame.Name = "Display"
-	DisplayFrame.ImageColor3 = Color3.fromRGB(215,70,10)
-	DisplayFrame.Size = UDim2.new(1,-115,0,235)
-	DisplayFrame.Position = UDim2.new(0,110,0,30)
-	DisplayFrame.Parent = MainFrame
-	
-	TitleBar = RoundBox(5)
-	TitleBar.Name = "TitleBar"
-	TitleBar.ImageColor3 = Color3.fromRGB(215,90,10)
-	TitleBar.Size = UDim2.new(1,-10,0,20)
-	TitleBar.Position = UDim2.new(0,5,0,5)
-	TitleBar.Parent = MainFrame
-	
-	Level += 1
-	
-	local MinimiseButton, TitleButton
-	local MinimiseToggle = true
-	
-	MinimiseButton = TitleIcon(true)
-	MinimiseButton.Name = "Minimise"
-	MinimiseButton.Parent = TitleBar
-	
-	TitleButton = TextButton(GUITitle, 14)
-	TitleButton.Name = "TitleButton"
-	TitleButton.Size = UDim2.new(1,-20,1,0)
-	TitleButton.Parent = TitleBar
-	
-	MinimiseButton.MouseButton1Down:Connect(function()
-		MinimiseToggle = not MinimiseToggle
-		if not MinimiseToggle then
-			Tween(MainFrame, {Size = UDim2.new(1,-50,0,30)})
-			Tween(MinimiseButton, {Rotation = 0})
-			Tween(ContainerShadow, {ImageTransparency = 1})
-		else
-			Tween(MainFrame, {Size = UDim2.new(1,-50,1,-30)})
-			Tween(MinimiseButton, {Rotation = 180})
-			Tween(ContainerShadow, {ImageTransparency = DropShadowTransparency})
-		end
-	end)
-	
-	TitleButton.MouseButton1Down:Connect(function()
-		local LastMX, LastMY = Mouse.X, Mouse.Y
-		local Move, Kill
-		Move = Mouse.Move:Connect(function()
-			local NewMX, NewMY = Mouse.X, Mouse.Y
-			local DX, DY = NewMX - LastMX, NewMY - LastMY
-			ContainerFrame.Position += UDim2.new(0,DX,0,DY)
-			LastMX, LastMY = NewMX, NewMY
-		end)
-		Kill = UserInputService.InputEnded:Connect(function(input)
-			if input.UserInputType == Enum.UserInputType.MouseButton1 then
-				Move:Disconnect()
-				Kill:Disconnect()
-			end
-		end)
-	end)
-	
-	Level += 1
-	
-	local MenuListLayout
-	
-	MenuListLayout = Instance.new("UIListLayout")
-	MenuListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	MenuListLayout.Padding = UDim.new(0,5)
-	MenuListLayout.Parent = MenuBar
-	
-	local TabCount = 0
-	
-	local TabLibrary = {}
-	
-	function TabLibrary.AddPage(PageTitle, SearchBarIncluded)
-		local SearchBarIncluded = (SearchBarIncluded == nil) and true or SearchBarIncluded
-		
-		local PageContainer = RoundBox(5)
-		PageContainer.Name = PageTitle
-		PageContainer.Size = UDim2.new(1,0,0,20)
-		PageContainer.LayoutOrder = TabCount
-		PageContainer.ImageColor3 = (TabCount == 0) and Color3.fromRGB(215,100,10) or Color3.fromRGB(215,90,10)
-		PageContainer.Parent = MenuBar
-		
-		local PageButton = TextButton(PageTitle, 14)
-		PageButton.Name = PageTitle.."Button"
-		PageButton.TextTransparency = (TabCount == 0) and 0 or 0.5
-		PageButton.Parent = PageContainer
-		
-		PageButton.MouseButton1Down:Connect(function()
-			spawn(function()
-				for _, Button in next, MenuBar:GetChildren() do
-					if Button:IsA("GuiObject") then
-						local IsButton = string.find(Button.Name:lower(), PageContainer.Name:lower())
-						local Button2 = Button:FindFirstChild(Button.Name.."Button")
-						Tween(Button, {ImageColor3 = IsButton and Color3.fromRGB(215,100,10) or Color3.fromRGB(215,90,10)})
-						Tween(Button2, {TextTransparency = IsButton and 0 or 0.5})
-					end
-				end
-			end)
-			spawn(function()
-				for _, Display in next, DisplayFrame:GetChildren() do
-					if Display:IsA("GuiObject") then
-						Display.Visible = string.find(Display.Name:lower(), PageContainer.Name:lower())
-					end
-				end
-			end)
-		end)
-		
-		local DisplayPage = ScrollingFrame()
-		DisplayPage.Visible = (TabCount == 0)
-		DisplayPage.Name = PageTitle
-		DisplayPage.Size = UDim2.new(1,0,1,0)
-		DisplayPage.Parent = DisplayFrame
-		
-		TabCount += 1
-		
-		local DisplayList = Instance.new("UIListLayout")
-		DisplayList.SortOrder = Enum.SortOrder.LayoutOrder
-		DisplayList.Padding = UDim.new(0,5)
-		DisplayList.Parent = DisplayPage
-		
-		DisplayList:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
-			local Y1 = DisplayList.AbsoluteContentSize.Y
-			local Y2 = DisplayPage.AbsoluteWindowSize.Y
-			DisplayPage.CanvasSize = UDim2.new(0,0,(Y1/Y2)+0.05,0)
-		end)
-		
-		local DisplayPadding = Instance.new("UIPadding")
-		DisplayPadding.PaddingBottom = UDim.new(0,5)
-		DisplayPadding.PaddingTop = UDim.new(0,5)
-		DisplayPadding.PaddingLeft = UDim.new(0,5)
-		DisplayPadding.PaddingRight = UDim.new(0,5)
-		DisplayPadding.Parent = DisplayPage
-		
-		if SearchBarIncluded then
-			local SearchBarContainer = RoundBox(5)
-			SearchBarContainer.Name = "SearchBar"
-			SearchBarContainer.ImageColor3 = Color3.fromRGB(215,85,10)
-			SearchBarContainer.Size = UDim2.new(1,0,0,20)
-			SearchBarContainer.Parent = DisplayPage
-			
-			local SearchBox = TextBox("Search...")
-			SearchBox.Name = "SearchInput"
-			SearchBox.Position = UDim2.new(0,20,0,0)
-			SearchBox.Size = UDim2.new(1,-20,1,0)
-			SearchBox.TextTransparency = 0.5
-			SearchBox.TextXAlignment = Enum.TextXAlignment.Left
-			SearchBox.Parent = SearchBarContainer
-			
-			local SearchIcon = SearchIcon()
-			SearchIcon.Parent = SearchBarContainer
-			
-			SearchBox:GetPropertyChangedSignal("Text"):Connect(function()
-				local NewValue = SearchBox.Text
-				
-				for _, Element in next, DisplayPage:GetChildren() do
-					if Element:IsA("Frame") then
-						if not string.find(Element.Name:lower(), "label") then
-							if string.find(Element.Name:lower(), NewValue:lower()) then
-								Element.Visible = true
-							else
-								Element.Visible = false
-							end
-						end
-					end
-				end
-			end)
-		end
-		
-		local PageLibrary = {}
-		
-		function PageLibrary.AddButton(Text, Callback, Parent, Underline)
-			local ButtonContainer = Frame()
-			ButtonContainer.Name = Text.."BUTTON"
-			ButtonContainer.Size = UDim2.new(1,0,0,20)
-			ButtonContainer.BackgroundTransparency = 1
-			ButtonContainer.Parent = Parent or DisplayPage
-			
-			local ButtonForeground = RoundBox(5)
-			ButtonForeground.Name = "ButtonForeground"
-			ButtonForeground.Size = UDim2.new(1,0,1,0)
-			ButtonForeground.ImageColor3 = Color3.fromRGB(215,85,10)
-			ButtonForeground.Parent = ButtonContainer
-			
-			if Underline then
-				local TextSize = TextService:GetTextSize(Text, 12, Enum.Font.Gotham, Vector2.new(0,0))
-			
-				local BottomEffect = Frame()
-				BottomEffect.Size = UDim2.new(0,TextSize.X,0,1)
-				BottomEffect.Position = UDim2.new(0.5,(-TextSize.X/2)-1,1,-1)
-				BottomEffect.BackgroundColor3 = Color3.fromRGB(255,255,255)
-				BottomEffect.BackgroundTransparency = 0.5
-				BottomEffect.Parent = ButtonForeground
-			end
-			
-			local HiddenButton = TextButton(Text, 12)
-			HiddenButton.Parent = ButtonForeground
-			
-			HiddenButton.MouseButton1Down:Connect(function()
-				Callback()
-				Tween(ButtonForeground, {ImageColor3 = Color3.fromRGB(215,95,10)})
-				Tween(HiddenButton, {TextTransparency = 0.5})
-				wait(TweenTime)
-				Tween(ButtonForeground, {ImageColor3 = Color3.fromRGB(215,85,10)})
-				Tween(HiddenButton, {TextTransparency = 0})
-			end)
-		end
-		
-		function PageLibrary.AddLabel(Text)
-			local LabelContainer = Frame()
-			LabelContainer.Name = Text.."LABEL"
-			LabelContainer.Size = UDim2.new(1,0,0,20)
-			LabelContainer.BackgroundTransparency = 1
-			LabelContainer.Parent = DisplayPage
-			
-			local LabelForeground = RoundBox(5)
-			LabelForeground.Name = "LabelForeground"
-			LabelForeground.ImageColor3 = Color3.fromRGB(215,95,10)
-			LabelForeground.Size = UDim2.new(1,0,1,0)
-			LabelForeground.Parent = LabelContainer
-			
-			local HiddenLabel = TextLabel(Text, 12)
-			HiddenLabel.Parent = LabelForeground
-		end
-		
-		function PageLibrary.AddDropdown(Text, ConfigurationArray, Callback)
-			local DropdownArray = ConfigurationArray or {}
-			
-			local DropdownToggle = false
-			
-			local DropdownContainer = Frame()
-			DropdownContainer.Size = UDim2.new(1,0,0,20)
-			DropdownContainer.Name = Text.."DROPDOWN"
-			DropdownContainer.BackgroundTransparency = 1
-			DropdownContainer.Parent = DisplayPage
-			
-			local DropdownForeground = RoundBox(5)
-			DropdownForeground.ClipsDescendants = true
-			DropdownForeground.ImageColor3 = Color3.fromRGB(215,85,10)
-			DropdownForeground.Size = UDim2.new(1,0,1,0)
-			DropdownForeground.Parent = DropdownContainer
-			
-			local DropdownExpander = DropdownIcon(true)
-			DropdownExpander.Parent = DropdownForeground
-			
-			local DropdownLabel = TextLabel(Text, 12)
-			DropdownLabel.Size = UDim2.new(1,0,0,20)
-			DropdownLabel.Parent = DropdownForeground
-			
-			local DropdownFrame = Frame()
-			DropdownFrame.Position = UDim2.new(0,0,0,20)
-			DropdownFrame.BackgroundTransparency = 1
-			DropdownFrame.Size = UDim2.new(1,0,0,#DropdownArray*20)
-			DropdownFrame.Parent = DropdownForeground
-			
-			local DropdownList = Instance.new("UIListLayout")
-			DropdownList.Parent = DropdownFrame
-			
-			for OptionIndex, Option in next, DropdownArray do
-				PageLibrary.AddButton(Option, function()
-					Callback(Option)
-					DropdownLabel.Text = Text..": "..Option
-				end, DropdownFrame, OptionIndex < #DropdownArray)
-			end
-			
-			DropdownExpander.MouseButton1Down:Connect(function()
-				DropdownToggle = not DropdownToggle
-				Tween(DropdownContainer, {Size = DropdownToggle and UDim2.new(1,0,0,20+(#DropdownArray*20)) or UDim2.new(1,0,0,20)})
-				Tween(DropdownExpander, {Rotation = DropdownToggle and 135 or 0})
-			end)
-		end
-		
-		function PageLibrary.AddColourPicker(Text, DefaultColour, Callback)
-			local DefaultColour = DefaultColour or Color3.fromRGB(255,255,255)
-			
-			local ColourDictionary = {
-				white = Color3.fromRGB(255,255,255),
-				black = Color3.fromRGB(0,0,0),
-				red = Color3.fromRGB(255,0,0),
-				green = Color3.fromRGB(0,255,0),
-				blue = Color3.fromRGB(0,0,255)
-			}
-			
-			if typeof(DefaultColour) == "table" then
-				DefaultColour = Color3.fromRGB(DefaultColour[1] or 255, DefaultColour[2] or 255, DefaultColour[3] or 255)
-			elseif typeof(DefaultColour) == "string" then
-				DefaultColour = ColourDictionary[DefaultColour:lower()] or ColourDictionary["white"]
-			end
-			
-			local PickerContainer = Frame()
-			PickerContainer.ClipsDescendants = true
-			PickerContainer.Size = UDim2.new(1,0,0,20)
-			PickerContainer.Name = Text.."COLOURPICKER"
-			PickerContainer.BackgroundTransparency = 1
-			PickerContainer.Parent = DisplayPage
-			
-			local ColourTracker = Instance.new("Color3Value")
-			ColourTracker.Value = DefaultColour
-			ColourTracker.Parent = PickerContainer
-			
-			local PickerLeftSide, PickerRightSide, PickerFrame = RoundBox(5), RoundBox(5), RoundBox(5)
-			
-			PickerLeftSide.Size = UDim2.new(1,-22,1,0)
-			PickerLeftSide.ImageColor3 = Color3.fromRGB(215,85,10)
-			PickerLeftSide.Parent = PickerContainer
-			
-			PickerRightSide.Size = UDim2.new(0,20,1,0)
-			PickerRightSide.Position = UDim2.new(1,-20,0,0)
-			PickerRightSide.ImageColor3 = DefaultColour
-			PickerRightSide.Parent = PickerContainer
-			
-			PickerFrame.ImageColor3 = Color3.fromRGB(215,85,10)
-			PickerFrame.Size = UDim2.new(1,-22,0,60)
-			PickerFrame.Position = UDim2.new(0,0,0,20)
-			PickerFrame.Parent = PickerContainer
-			
-			local PickerList = Instance.new("UIListLayout")
-			PickerList.SortOrder = Enum.SortOrder.LayoutOrder
-			PickerList.Parent = PickerFrame
-			
-			local RedPicker = PageLibrary.AddSlider("R", {Min = 0, Max = 255, Def = ColourTracker.Value.R * 255}, function(Value)
-				ColourTracker.Value = Color3.fromRGB(Value, ColourTracker.Value.G * 255, ColourTracker.Value.B * 255)
-				Callback(ColourTracker.Value)
-			end, PickerFrame)
-			
-			local BluePicker = PageLibrary.AddSlider("G", {Min = 0, Max = 255, Def = ColourTracker.Value.G * 255}, function(Value)
-				ColourTracker.Value = Color3.fromRGB(ColourTracker.Value.R * 255, Value, ColourTracker.Value.B * 255)
-				Callback(ColourTracker.Value)
-			end, PickerFrame)
-			
-			local GreenPicker = PageLibrary.AddSlider("B", {Min = 0, Max = 255, Def = ColourTracker.Value.B * 255}, function(Value)
-				ColourTracker.Value = Color3.fromRGB(ColourTracker.Value.R * 255, ColourTracker.Value.G * 255, Value)
-				Callback(ColourTracker.Value)
-			end, PickerFrame)
-			
-			local EffectLeft, EffectRight = Frame(), Frame()
-			
-			EffectLeft.BackgroundColor3 = Color3.fromRGB(215,85,10)
-			EffectLeft.Position = UDim2.new(1,-5,0,0)
-			EffectLeft.Size = UDim2.new(0,5,1,0)
-			EffectLeft.Parent = PickerLeftSide
-			
-			EffectRight.BackgroundColor3 = DefaultColour
-			EffectRight.Size = UDim2.new(0,5,1,0)
-			EffectRight.Parent = PickerRightSide
-			
-			local PickerLabel = TextLabel(Text, 12)
-			PickerLabel.Size = UDim2.new(1,0,0,20)
-			PickerLabel.Parent = PickerLeftSide
-			
-			ColourTracker:GetPropertyChangedSignal("Value"):Connect(function()
-				local NewValue = ColourTracker.Value
-				EffectRight.BackgroundColor3 = NewValue
-				PickerRightSide.ImageColor3 = NewValue
-			end)
-			
-			local PickerToggle = false
-			
-			local PickerButton = TextButton("")
-			PickerButton.Parent = PickerRightSide
-			
-			PickerButton.MouseButton1Down:Connect(function()
-				PickerToggle = not PickerToggle
-				Tween(PickerContainer, {Size = PickerToggle and UDim2.new(1,0,0,80) or UDim2.new(1,0,0,20)})
-			end)
-		end
-		
-		function PageLibrary.AddSlider(Text, ConfigurationDictionary, Callback, Parent)
-			local Configuration = ConfigurationDictionary
-			local Minimum = Configuration.Minimum or Configuration.minimum or Configuration.Min or Configuration.min
-			local Maximum = Configuration.Maximum or Configuration.maximum or Configuration.Max or Configuration.max
-			local Default = Configuration.Default or Configuration.default or Configuration.Def or Configuration.def
-			
-			if Minimum > Maximum then
-				local StoreValue = Minimum
-				Minimum = Maximum
-				Maximum = StoreValue
-			end
-			
-			Default = math.clamp(Default, Minimum, Maximum)
-			
-			local DefaultScale = Default/Maximum
-			
-			local SliderContainer = Frame()
-			SliderContainer.Name = Text.."SLIDER"
-			SliderContainer.Size = UDim2.new(1,0,0,20)
-			SliderContainer.BackgroundTransparency = 1
-			SliderContainer.Parent = Parent or DisplayPage
-			
-			local SliderForeground = RoundBox(5)
-			SliderForeground.Name = "SliderForeground"
-			SliderForeground.ImageColor3 = Color3.fromRGB(215,85,10)
-			SliderForeground.Size = UDim2.new(1,0,1,0)
-			SliderForeground.Parent = SliderContainer
-			
-			local SliderButton = TextButton(Text..": "..Default)
-			SliderButton.Size = UDim2.new(1,0,1,0)
-			SliderButton.ZIndex = 6
-			SliderButton.Parent = SliderForeground
-			
-			local SliderFill = RoundBox(5)
-			SliderFill.Size = UDim2.new(DefaultScale,0,1,0)
-			SliderFill.ImageColor3 = Color3.fromRGB(0,0,0)
-			SliderFill.ZIndex = 5
-			SliderFill.ImageTransparency = 0.5
-			SliderFill.Parent = SliderButton
-			
-			SliderButton.MouseButton1Down:Connect(function()
-				Tween(SliderFill, {ImageTransparency = 0.5})
-				local X, Y, XScale, YScale = GetXY(SliderButton)
-				local Value = math.floor(Minimum + ((Maximum - Minimum) * XScale))
-				Callback(Value)
-				SliderButton.Text = Text..": "..tostring(Value)
-				local TargetSize = UDim2.new(XScale,0,1,0)
-				Tween(SliderFill, {Size = TargetSize})
-				local SliderMove, SliderKill
-				SliderMove = Mouse.Move:Connect(function()
-					Tween(SliderFill, {ImageTransparency = 0.5})
-					local X, Y, XScale, YScale = GetXY(SliderButton)
-					local Value = math.floor(Minimum + ((Maximum - Minimum) * XScale))
-					Callback(Value)
-					SliderButton.Text = Text..": "..tostring(Value)
-					local TargetSize = UDim2.new(XScale,0,1,0)
-					Tween(SliderFill, {Size = TargetSize})
-				end)
-				SliderKill = UserInputService.InputEnded:Connect(function(UserInput)
-					if UserInput.UserInputType == Enum.UserInputType.MouseButton1 then
-						Tween(SliderFill, {ImageTransparency = 0.7})
-						SliderMove:Disconnect()
-						SliderKill:Disconnect()
-					end
-				end)
-			end)
-		end
-		
-		function PageLibrary.AddToggle(Text, Default, Callback)
-			local ThisToggle = Default or false
-			
-			local ToggleContainer = Frame()
-			ToggleContainer.Name = Text.."TOGGLE"
-			ToggleContainer.Size = UDim2.new(1,0,0,20)
-			ToggleContainer.BackgroundTransparency = 1
-			ToggleContainer.Parent = DisplayPage
-			
-			local ToggleLeftSide, ToggleRightSide, EffectFrame, RightTick = RoundBox(5), RoundBox(5), Frame(), TickIcon()
-			local FlatLeft, FlatRight = Frame(), Frame()
-			
-			ToggleLeftSide.Size = UDim2.new(1,-22,1,0)
-			ToggleLeftSide.ImageColor3 = Color3.fromRGB(215,85,10)
-			ToggleLeftSide.Parent = ToggleContainer
-			
-			ToggleRightSide.Position = UDim2.new(1,-20,0,0)
-			ToggleRightSide.Size = UDim2.new(0,20,1,0)
-			ToggleRightSide.ImageColor3 = Color3.fromRGB(215,95,10)
-			ToggleRightSide.Parent = ToggleContainer
-			
-			FlatLeft.BackgroundColor3 = Color3.fromRGB(215,85,10)
-			FlatLeft.Size = UDim2.new(0,5,1,0)
-			FlatLeft.Position = UDim2.new(1,-5,0,0)
-			FlatLeft.Parent = ToggleLeftSide
-			
-			FlatRight.BackgroundColor3 = Color3.fromRGB(215,95,10)
-			FlatRight.Size = UDim2.new(0,5,1,0)
-			FlatRight.Parent = ToggleRightSide
-			
-			EffectFrame.BackgroundColor3 = ThisToggle and Color3.fromRGB(0,255,0) or Color3.fromRGB(255,255,255)
-			EffectFrame.Position = UDim2.new(1,-22,0.2,0)
-			EffectFrame.Size = UDim2.new(0,2,0.6,0)
-			EffectFrame.Parent = ToggleContainer
-			
-			RightTick.ImageTransparency = ThisToggle and 0 or 1
-			RightTick.Parent = ToggleRightSide
-			
-			local ToggleButton = TextButton(Text, 12)
-			ToggleButton.Name = "ToggleButton"
-			ToggleButton.Size = UDim2.new(1,0,1,0)
-			ToggleButton.Parent = ToggleLeftSide
-			
-			ToggleButton.MouseButton1Down:Connect(function()
-				ThisToggle = not ThisToggle
-				Tween(EffectFrame, {BackgroundColor3 = ThisToggle and Color3.fromRGB(0,255,0) or Color3.fromRGB(255,255,255)})
-				Tween(RightTick, {ImageTransparency = ThisToggle and 0 or 1})
-				Callback(ThisToggle)
-			end)	
-		end
-		
-		return PageLibrary
-	end
-	
-	return TabLibrary
-end
+TestPage.AddToggle("Fast Climb", nil, function(Value)
+if Value then
+    game:GetService('RunService'):BindToRenderStep("test", 0 , function()
+        if game.Players.LocalPlayer.Character.Humanoid:GetState() == Enum.HumanoidStateType.Climbing then
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
+        else 
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        end
+        end)
+    elseif not Value then
+        game:GetService('RunService'):UnbindFromRenderStep("test")
+    end
+    end)
 
-return UILibrary
+    getgenv().sitid = "rbxassetid://7024348065"
+
+    TestPage.AddToggle("Custom Sit", nil, function(Value)
+if Value then
+    local Anim = Instance.new("Animation")
+    Anim.AnimationId = getgenv().sitid
+    seatanim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(Anim)
+    if game.Players.LocalPlayer.Character.Humanoid.Sit == true then
+        seatanim:Play()
+    end
+  getgenv().customsitthing = game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("Sit"):Connect(function()
+        if game.Players.LocalPlayer.Character.Humanoid.Sit == true then
+    seatanim:Play()
+        else
+            seatanim:Stop() 
+        end
+    end)
+elseif not Value then
+    getgenv().customsitthing:Disconnect()
+    seatanim:Stop() 
+    end
+end)
+
+
+
+TestPage.AddToggle("Better Bars", nil, function(Value)
+
+
+
+   
+    getgenv().betterbars = true 
+    getgenv().oldhealth = game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health
+    
+    
+    if getgenv().betterbars == true then 
+    
+    repeat task.wait()
+    until game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainScreenGui")
+    
+    getgenv().ellaisgay = Instance.new('Frame', game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP)
+    getgenv().ellaisgay.Name = 'fakebar'
+    getgenv().ellaisgay.Size = game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar.Size
+    getgenv().ellaisgay.Position = game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar.Position
+    getgenv().ellaisgay.BackgroundColor3 = Color3.fromRGB(255,0,0)
+    getgenv().ellaisgay.BorderSizePixel = 0
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.TextLabel.ZIndex = 5
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar.BackgroundTransparency = 1
+    
+    
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar:GetPropertyChangedSignal("Size"):Connect(function()
+    --getgenv().ellaisgay:TweenSize(game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar.Size)
+    game:GetService("TweenService"):Create(getgenv().ellaisgay, TweenInfo.new(0.3), {Size = game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar.Size}):Play()
+    
+    local healthchange = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Health - getgenv().oldhealth 
+    
+    if game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar:FindFirstChild("Dmg") then 
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar:FindFirstChild("Dmg"):Destroy()
+    end
+    
+    if tonumber(healthchange) > 0 then 
+    local ludus = Instance.new("TextLabel",game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar)
+    ludus.Name = "Dmg"
+    ludus.TextColor3 = Color3.fromRGB(0,255,0)
+    ludus.BackgroundTransparency = 1
+    ludus.Position = UDim2.new(0.5,0,0.5,330)
+    ludus.Size = UDim2.new(0,30,0,30)
+    ludus.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+    ludus.TextSize = 18
+    ludus.Text = '+'..math.round(healthchange)
+    ludus.Rotation = math.random(-15,15)
+    task.wait(0.8)
+    
+    ludus:Destroy()
+    
+    elseif tonumber(healthchange) < 0 then 
+        if game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar:FindFirstChild("Dmg") then 
+            game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar:FindFirstChild("Dmg"):Destroy()
+        end
+        local ludus = Instance.new("TextLabel",game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar)
+        ludus.Name = "Dmg"
+        ludus.TextColor3 = Color3.fromRGB(255,0,0)
+        ludus.BackgroundTransparency = 1
+        ludus.Position = UDim2.new(0.5,0,0.5,330)
+        ludus.Size = UDim2.new(0,30,0,30)
+        ludus.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+        ludus.TextSize = 18
+        ludus.Text = ''..math.round(healthchange)
+        ludus.Rotation = math.random(-15,15)
+        task.wait(0.8)
+        
+        ludus:Destroy()
+        
+    end
+    
+    
+    
+    
+    
+    getgenv().oldhealth = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Health
+    
+    end)
+    
+    --game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar
+    --game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.TextLabel.TextXAlignment = 'Center'
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Image.ImageColor3 = Color3.fromRGB(58, 58, 58)
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.ImageColor3 = Color3.fromRGB(255, 255, 255)
+    --game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Image.ImageColor3 = Color3.fromRGB(255,0,0)
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.bar.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.bar.BackgroundColor3 = Color3.fromRGB(255,255,255)
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar.BackgroundColor3 = Color3.fromRGB(255,0,0)
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.firebar.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Border.Image = ''
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Border.Image = ''
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Border.Image = ''
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.Image = 'rbxassetid://11677094284' 
+    
+    task.wait()
+    --game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Image.Image = 'rbxassetid://14820299355'
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.Position = UDim2.new(0.0189999994, 0, 0.100000001, 0)
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Image.Position = UDim2.new(0.0189999994, 0, 0.100000001, 0) 
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Image.Position = UDim2.new(0.0189999994, 0, 0.100000001, 0)
+    
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.TextLabel.Text = '                       Armor'
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.TextLabel.Text = '                       Energy'
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.TextLabel.TextXAlignment = 'Left'
+    
+    getgenv().depri = game.Players.LocalPlayer.CharacterAdded:Connect(function()
+        repeat task.wait()
+        until game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainScreenGui")
+        
+        getgenv().ellaisgay = Instance.new('Frame', game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP)
+        getgenv().ellaisgay.Name = 'fakebar'
+        getgenv().ellaisgay.Size = game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar.Size
+        getgenv().ellaisgay.Position = game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar.Position
+        getgenv().ellaisgay.BackgroundColor3 = Color3.fromRGB(255,0,0)
+        getgenv().ellaisgay.BorderSizePixel = 0
+        
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.TextLabel.ZIndex = 5
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar.BackgroundTransparency = 1
+        
+        
+        
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar:GetPropertyChangedSignal("Size"):Connect(function()
+        --getgenv().ellaisgay:TweenSize(game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar.Size)
+        game:GetService("TweenService"):Create(getgenv().ellaisgay, TweenInfo.new(0.3), {Size = game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar.Size}):Play()
+        
+        local healthchange = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Health - getgenv().oldhealth 
+        
+        if game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar:FindFirstChild("Dmg") then 
+            game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar:FindFirstChild("Dmg"):Destroy()
+        end
+        
+        if tonumber(healthchange) > 0 then 
+        local ludus = Instance.new("TextLabel",game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar)
+        ludus.Name = "Dmg"
+        ludus.TextColor3 = Color3.fromRGB(0,255,0)
+        ludus.BackgroundTransparency = 1
+        ludus.Position = UDim2.new(0, 830, 0, 700)
+        ludus.Size = UDim2.new(0,30,0,30)
+        ludus.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+        ludus.TextSize = 18
+        ludus.Text = '+'..math.round(healthchange)
+        ludus.Rotation = math.random(-15,15)
+        task.wait(0.8)
+        
+        ludus:Destroy()
+        
+        elseif tonumber(healthchange) < 0 then 
+            if game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar:FindFirstChild("Dmg") then 
+                game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar:FindFirstChild("Dmg"):Destroy()
+            end
+            local ludus = Instance.new("TextLabel",game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar)
+            ludus.Name = "Dmg"
+            ludus.TextColor3 = Color3.fromRGB(255,0,0)
+            ludus.BackgroundTransparency = 1
+            ludus.Position = UDim2.new(0, 830, 0, 700)
+            ludus.Size = UDim2.new(0,30,0,30)
+            ludus.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+            ludus.TextSize = 18
+            ludus.Text = ''..math.round(healthchange)
+            ludus.Rotation = math.random(-15,15)
+            task.wait(0.8)
+            
+            ludus:Destroy()
+            
+        end
+        
+        
+        
+        
+        
+        getgenv().oldhealth = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Health
+        
+        end)
+        
+        --game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar
+        --game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.TextLabel.TextXAlignment = 'Center'
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Image.ImageColor3 = Color3.fromRGB(58, 58, 58)
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.ImageColor3 = Color3.fromRGB(0, 57, 138)
+        --game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Image.ImageColor3 = Color3.fromRGB(255,0,0)
+        
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.bar.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.bar.BackgroundColor3 = Color3.fromRGB(0, 57, 138)
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar.BackgroundColor3 = Color3.fromRGB(255,0,0)
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.firebar.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
+        
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Border.Image = ''
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Border.Image = ''
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Border.Image = ''
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.Image = 'rbxassetid://14826864710' 
+        
+        task.wait()
+        --game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Image.Image = 'rbxassetid://14820299355'
+        
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.Position = UDim2.new(0.0189999994, 0, 0.100000001, 0)
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Image.Position = UDim2.new(0.0189999994, 0, 0.100000001, 0) 
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Image.Position = UDim2.new(0.0189999994, 0, 0.100000001, 0)
+        
+        
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.TextLabel.Text = '                       Armor'
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.TextLabel.Text = '                       Energy'
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.TextLabel.TextXAlignment = 'Left'
+    end)
+    
+    end
+    
+    if getgenv().betterbars == false then 
+        repeat task.wait()
+        until game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainScreenGui")
+    
+    
+    getgenv().depri:Disconnect()
+    
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.TextLabel.Text = 'Armor'
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.TextLabel.Text = 'Energy'
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.TextLabel.TextXAlignment = 'Right'
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Picture.Border.Image = 'rbxassetid://157357692'
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Border.Image = 'rbxassetid://157357692'
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Border.Image = 'rbxassetid://157357692'
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.Image = 'rbxassetid://181035717'
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.Picture.Image.ImageColor3 = Color3.fromRGB(236, 231, 85)
+    
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Energy.bar.BackgroundColor3 = Color3.fromRGB(182, 182, 9)
+    
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.bar.BackgroundColor3 = Color3.fromRGB(36, 182, 3)
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.Picture.Image.ImageColor3 = Color3.fromRGB(104, 157, 236)
+    game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Bar.Armor.bar.BackgroundColor3 = Color3.fromRGB(0, 136, 194)
+    
+    
+    end
+    
+    
+        
+    end)
+    
+    TestPage.AddToggle("Better Inv", nil, function(Value)
+        getgenv().betterinv = Value 
+    
+    
+        if getgenv().betterinv == true then 
+        
+            --Hotbar
+            for i , v in pairs(game:GetService("CoreGui").RobloxGui.Backpack.Hotbar:GetChildren()) do 
+           local abc =  Instance.new('UICorner', v)
+           abc.CornerRadius = UDim.new(0,9)
+           v.BackgroundTransparency = 0.5
+        --   v.Number.Text = ''
+            end
+        
+            game:GetService("CoreGui").RobloxGui.Backpack.Inventory.BackgroundTransparency = 0.2
+            local mocool =  Instance.new('UICorner',game:GetService("CoreGui").RobloxGui.Backpack.Inventory)
+            mocool.CornerRadius = UDim.new(0, 9)
+        
+            game:GetService("CoreGui").RobloxGui.Backpack.Inventory.Search.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+            local furry = Instance.new('UICorner', game:GetService("CoreGui").RobloxGui.Backpack.Inventory.Search)
+            furry.CornerRadius = UDim.new(0,9)
+            game:GetService("CoreGui").RobloxGui.Backpack.Inventory.Search.TextBox.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold)
+        
+            getgenv().equippedshit = game:GetService("CoreGui").RobloxGui.Backpack.Hotbar.DescendantAdded:connect(function(descendant)
+            if descendant.Name == 'Equipped' then 
+            for i, v in pairs(descendant:GetChildren()) do 
+                if v.Name == 'Edge' then 
+                   v.BackgroundTransparency = 1
+                end
+            end
+            local UIStroke = Instance.new('UIStroke', descendant.Parent)
+            UIStroke.Color = Color3.fromRGB(255,255,255)
+            UIStroke.Thickness = 2
+            UIStroke.ApplyStrokeMode = 'Border'
+        
+            end
+            end)
+        
+            getgenv().unequipped = game:GetService("CoreGui").RobloxGui.Backpack.Hotbar.DescendantRemoving:connect(function(descendant)
+                if descendant.Name == 'Equipped' then 
+                    if descendant.Parent:FindFirstChildWhichIsA("UIStroke") then 
+                        descendant.Parent:FindFirstChildWhichIsA("UIStroke"):Destroy()
+                    end
+                end
+            end)
+        end
+    end)
+
+   --[[
+
+TestPage.AddDropdown("Sit ID", {
+    "Thinking",
+    "Daydream"
+    }, function(Option)
+        if Option == "Thinking" then
+            getgenv().sitid = "rbxassetid://7024348065"
+        if Option == "Daydream" then
+            getgenv().sitid = "rbxassetid://7024354031"    
+        end
+    end
+    end)
+
+
+    
+
+
+BuyPage.AddButton("Bat", function()
+    local savedhumanoidpos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+           game.Workspace.Ignored.Shop["[Bat] - $283"].Head.CFrame
+       wait(0.2)
+       fireclickdetector(game.Workspace.Ignored.Shop["[Bat] - $283"].ClickDetector)
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(savedhumanoidpos)
+       
+   end)
+   
+   BuyPage.AddButton("Knife", function()
+       local savedhumanoidpos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+           game.Workspace.Ignored.Shop["[Knife] - $155"].Head.CFrame
+       wait(0.2)
+       fireclickdetector(game.Workspace.Ignored.Shop["[Knife] - $155"].ClickDetector)
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(savedhumanoidpos)
+       
+   end)
+   
+   BuyPage.AddButton("Nunchucks", function()
+       local savedhumanoidpos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+           game.Workspace.Ignored.Shop["[Nunchucks] - $464"].Head.CFrame
+       wait(0.2)
+       fireclickdetector(game.Workspace.Ignored.Shop["[Nunchucks] - $464"].ClickDetector)
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(savedhumanoidpos)
+       
+   end)
+
+   
+ 
+--]]
